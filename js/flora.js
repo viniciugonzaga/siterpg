@@ -85,3 +85,26 @@ document.addEventListener("scroll", () => {
 document.querySelector('.hamburger').addEventListener('click', function() {
     document.querySelector('.nav-links').classList.toggle('active');
 });
+// Detectar telas pequenas
+if (window.innerWidth <= 1080) {
+    let isFlipped = false;
+  
+    setInterval(() => {
+      if (isFlipped) {
+        card1.style.transform = "translateX(-20px) rotate(-2deg)";
+        card1.style.zIndex = "2";
+  
+        card2.style.transform = "translateX(20px) rotate(2deg)";
+        card2.style.zIndex = "1";
+      } else {
+        card1.style.transform = "translateX(20px) rotate(2deg)";
+        card1.style.zIndex = "1";
+  
+        card2.style.transform = "translateX(-20px) rotate(-2deg)";
+        card2.style.zIndex = "2";
+      }
+  
+      isFlipped = !isFlipped;
+    }, 3000); // Troca automática a cada 3 segundos
+  }
+  
