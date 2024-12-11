@@ -714,16 +714,12 @@ nav {
     border-radius: 5px;
     margin-bottom: 5px;
     color: #fff5bb;
-    text-shadow:
-    0 0 10px #e0b31c,
-   
-    0 0 30px #cfcd3a;
+    text-shadow: 0 0 10px #e0b31c, 0 0 30px #cfcd3a;
 }
 
 .topicos li:hover {
     background-color: #3d0404c2;
 }
-
 
 .bloco-conteudo {
     flex: 1;
@@ -736,10 +732,10 @@ nav {
     background-repeat: no-repeat;
     box-shadow: 0 4px 8px rgba(250, 237, 53, 0.3);
     text-align: center;
-    width: 100%; /* Ajusta a largura ao bloco */
-    height: auto; /* Mantém a proporção da imagem */
-    object-fit: cover; /* Preenche o bloco, cortando o excesso, se necessário */
-    border-radius: 10px; /* Ajusta as bordas para combinar com o bloco */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
     background-image: url('../imagens/regras_menu.jpg');
 }
 
@@ -750,7 +746,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Sombra leve na imagem */
+    background: rgba(0, 0, 0, 0.4);
     z-index: 1;
     border-radius: 10px;
 }
@@ -773,6 +769,40 @@ nav {
     background-color: #3d0404c2;
     border-radius: 5%;
     padding: 10px;
+}
+
+/* Responsividade para telas com até 780px */
+@media screen and (max-width: 1080px) {
+    .container {
+        flex-direction: column; /* Alinha os itens verticalmente */
+        margin-left: 0;
+        width: 80%;
+        margin: 5%;
+    }
+
+    .topicos {
+        width: 100%; /* Deixa os tópicos com 100% da largura disponível */
+        margin-bottom: 10px;
+    }
+
+    .topicos li {
+        width: 100%; /* Faz com que os itens da lista ocupem 100% da largura */
+        text-align: center; /* Centraliza o texto dos tópicos */
+    }
+
+    .bloco-conteudo {
+        width: 90%; /* A largura do conteúdo ocupa 100% */
+        height: auto;
+        padding: 15px;
+    }
+
+    .titulo {
+        font-size: 24px; /* Ajusta o tamanho da fonte do título */
+    }
+
+    .texto {
+        font-size: 16px; /* Ajusta o tamanho da fonte do texto */
+    }
 }
 /* Geral do footer ------------------------------------------------------------------------------*/
 /* Estilo Geral do Footer */
