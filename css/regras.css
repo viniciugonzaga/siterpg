@@ -328,7 +328,7 @@ nav {
 .glow-on-hover {
     padding: 0.5rem 1rem;
     font-size: 1rem; /* Tamanho de fonte relativo */
-    background-color: #0e4ba7; /* Vermelho vibrante */
+    background-color: #3d0404c2; /* Vermelho vibrante */
     color: white;
     border: none;
     border-radius: 5px;
@@ -534,9 +534,14 @@ nav {
   .titulo_efeito {
     font-size: 4rem;
     font-weight: bold;
-    color: #30f1f8;
+    
     position: relative;
     max-width:319px;
+    color: #fff5bb;
+    text-shadow:
+    0 0 10px #e0b31c,
+    0 0 20px #f6fa1d,
+    0 0 30px #cfcd3a;
 }
 
 .titulo_efeito:after {
@@ -546,7 +551,7 @@ nav {
     left: 50%;
     transform: translateX(-50%);
     height: 4px;
-    background: linear-gradient(90deg, #0d7564,#47ebf7, #0d7564);
+    background: linear-gradient(90deg, #f5da45,#9c2727, #f5da45);
     animation: wave 8s infinite;
 }
 
@@ -586,6 +591,7 @@ nav {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     overflow: hidden;
+    border: solid 2px #faa80e;
   }
   
   /* Imagem de fundo apagada */
@@ -678,11 +684,100 @@ nav {
         font-size: 1.2rem; /* Diminui o tamanho da fonte em telas médias */
     }
   }
-  
+  .container {
+    display: flex;
+    gap: 20px;
+    width: 80%;
+    max-width: 1200px;
+    padding: 20px;
+    background: #351010af;
+    border: solid 2px #faa80e;
+    box-shadow: 0 4px 8px rgba(240, 206, 13, 0.856);
+    border-radius: 5%;
+    margin-left: 7.5%;
+    margin-bottom: 5%;
+}
+
+.topicos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 200px;
+    border: solid 2px #faa80e;
+    border-radius: 5%;
+}
+
+.topicos li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    color: #fff5bb;
+    text-shadow:
+    0 0 10px #e0b31c,
+   
+    0 0 30px #cfcd3a;
+}
+
+.topicos li:hover {
+    background-color: #3d0404c2;
+}
+
+
+.bloco-conteudo {
+    flex: 1;
+    position: relative;
+    border-radius: 10px;
+    padding: 20px;
+    color: rgb(255, 228, 73);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 4px 8px rgba(250, 237, 53, 0.3);
+    text-align: center;
+    width: 100%; /* Ajusta a largura ao bloco */
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: cover; /* Preenche o bloco, cortando o excesso, se necessário */
+    border-radius: 10px; /* Ajusta as bordas para combinar com o bloco */
+    background-image: url('../imagens/regras_menu.jpg');
+}
+
+.bloco-conteudo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Sombra leve na imagem */
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.titulo {
+    position: relative;
+    z-index: 2;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 5px rgba(245, 229, 137, 0.7);
+}
+
+.texto {
+    position: relative;
+    z-index: 2;
+    font-size: 18px;
+    line-height: 1.5;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    background-color: #3d0404c2;
+    border-radius: 5%;
+    padding: 10px;
+}
 /* Geral do footer ------------------------------------------------------------------------------*/
 /* Estilo Geral do Footer */
 footer {
-    background: linear-gradient(45deg,#1d323594, #0416389d,#1d323594);
+    background: linear-gradient(45deg,#792525c2,#3d0404c2);
     color: #fff;
     padding: 20px 0;
     text-align: center;
