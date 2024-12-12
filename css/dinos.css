@@ -1009,13 +1009,13 @@ nav {
     top: 1%; /* Define a distância do menu a partir do topo da tela */
     right: 1%; /* Define a distância do menu a partir da borda direita */
     width: 350px; /* Aumenta a largura do menu */
-    background-color: #463c04a8; /* Cor de fundo */
+    background-color: #2c2603e5; /* Cor de fundo */
     border: 1px solid #ffe75d; /* Borda */
     border-radius: 5px; /* Bordas arredondadas */
     padding: 1.2rem; /* Espaçamento interno maior */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
     z-index: 1000; /* Garante que o menu fique acima de outros elementos */
-    color: #ff9c50;
+    color: #7303f3;
     transition: all 0.3s ease;
 }
 
@@ -1166,61 +1166,7 @@ nav {
 
 
 /* fim do nav-bar---------------------------------------------------------------------------- */
-.senha-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    color: rgb(255, 232, 24);
-    padding: 20px;
-    border-radius: 10px;
-    z-index: 999;
-}
 
-/* Estilo para o campo de senha */
-.senha-container input {
-    padding: 10px;
-    font-size: 18px;
-    margin-right: 10px;
-}
-
-/* Estilo para o botão */
-.senha-container button {
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.senha-container button:hover {
-    background-color: #45a049;
-}
-
-/* Estilo do conteúdo da página */
-#conteudo {
-    padding: 20px;
-}
-
-/* Overlay para bloquear interação */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.884);
-    z-index: 998;
-    display: block;
-    pointer-events: auto;  /* Bloqueia qualquer interação */
-}
-
-/* Remove a rolagem da página */
-body.no-scroll {
-    overflow: hidden;
-}
 /* Main*/
 
 /* Estilo geral do título */
@@ -1234,8 +1180,14 @@ body.no-scroll {
   .titulo_efeito {
     font-size: 4rem;
     font-weight: bold;
-    color: #f8f537;
+    color: #fcfbf2;
     position: relative;
+    text-shadow:
+      0 0 5px #6a03be,   /* Primeira camada de brilho vermelho */
+      0 0 10px #a44cec,  /* Segunda camada laranja */
+      0 0 20px #620399,  /* Terceira camada mais forte */
+      0 0 40px #9a4bf5,  /* Camada de brilho maior */
+      0 0 80px #5d0399;  /* Brilho externo */
 }
 
 .titulo_efeito:after {
@@ -1278,236 +1230,210 @@ body.no-scroll {
         100% { width: 50px; }
     }
 }
+
 /*-----------------------------------------cards-------------------------------------------------*/
-
-/* Estilos gerais dos botões */
-
-.filter-buttons{
-
-margin: 0 auto;
-text-align: center;
-display: flex;
-flex-direction: column; /* Alinhar os elementos verticalmente */
-justify-content: center; /* Centralizar verticalmente */
-align-items: center; /* Centralizar horizontalmente */
-}
-/* Estilo dos botões de tipo de alimentação */
-.filter-buttons button {
-    background-color: #f09102;
-    color: white;
-}
-
-.filter-buttons button:hover {
-    background-color: #ca0808;
-    transform: scale(1.05); /* Efeito de zoom */
-}
-
-/* Estilo dos botões de famílias */
-.family-buttons button {
-    background-color: #920505;
-    color: white;
-}
-
-.family-buttons button:hover {
-    background-color: #e47208;
-}
-
-/* Estilo dos botões de dinossauros */
-.creature-button {
-    background-color: #e67e22;
-    color: white;
-}
-
-.creature-button:hover {
-    background-color: #a00404;
-}
-
-/* Estilo dos cards de criatura */
-.creature-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin: 15px 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    transition: transform 0.3s ease;
-}
-
-.creature-card:hover {
-    transform: scale(1.05); /* Efeito de zoom sobre o card */
-}
-
-/* Estilo da lista de dinossauros */
-.creature-list {
+.menu-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    justify-content: space-between;
+    width: 80%;
+    margin: 20px 0;
+    display: flex;
+    margin-left: 10%;
+    
 }
 
-/* Card detalhado da criatura */
-.creature-card-detail {
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    padding: 25px;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
-    margin-top: 20px;
+.menu-section {
+    flex: 1;
+    margin: 0 10px;
+    border: 2px solid rgb(238, 204, 12);
+    padding: 20px;
+    text-align: center;
+    background-color: #370455da;
+    color: #eecf21;
+    font-size: 1.6em;
 }
 
-.creature-card-detail img {
-    max-width: 250px;
-    margin-bottom: 15px;
+.menu-section h3 {
+    margin-bottom: 10px;
 }
 
-/* Esconder os cards e botões até o momento necessário */
-#creature-card {
-    display: none;
-}
-
-/* Botões de dinossauros */
-.creature-button {
-    padding: 12px 25px;
-    margin: 5px;
+.menu-section button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
     cursor: pointer;
+    background-color: #f0d911;
     border: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    text-align: center;
-    display: inline-block;
-    width: auto;
-    min-width: 150px;
-    max-width: 300px;
-    white-space: normal;
-    word-wrap: break-word;
+    transition: background-color 0.3s;
 }
 
-/* Card Detalhado */
-.creature-card-detail {
-    background-color: #f4f4f4;
-    border-radius: 10px;
-    padding: 25px;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+.menu-section button:hover {
+    background-color: #fdd41a;
+}
+
+.search-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
     margin-top: 20px;
-}
-
-.creature-card-detail img {
-    max-width: 250px;
-    margin-bottom: 15px;
-}
-
-/* Outros estilos permanecem como antes */
-
-
-
-
-/* Geral do footer ------------------------------------------------------------------------------*/
-/* Estilo Geral do Footer */
-footer {
-    background: linear-gradient(45deg, #5c5a07c7, #99947867,#5c5a07c7);
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-    margin-top: 30%;
-    width: 1400px;
-  }
-  
-  /* Conteúdo Principal */
-  .footer-content {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 80%;
+    background-color: #410672d8;
+    border: 2px solid rgb(227, 231, 4);
     padding: 20px;
-    flex-wrap: wrap;
-  }
-  
-  /* Seções do Footer */
-  .footer-section {
-    flex: 1;
-    margin: 10px;
-    min-width: 250px;
-  }
-  
-  .footer-section h2 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-  }
-  
-  .footer-section p {
-    font-size: 0.9rem;
-    line-height: 1.6;
-  }
-  
-  /* Links */
-  .footer-section ul {
+    margin-left: 7.5%;
+    color: #ffcb0f;
+}
+
+.search-container input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #fcec10;
+    border-radius: 5px;
+    
+}
+
+.creature-list {
     list-style: none;
     padding: 0;
-  }
-  
-  .footer-section ul li {
-    margin: 10px 0;
-  }
-  
-  .footer-section ul li a {
-    background: linear-gradient(45deg, #6d00fa, #fc104b, #8e8fff, #2dbdf7, #e05dfa);
-    background-size: 300%;
-    background-clip: text; /* Faz o gradiente ser aplicado ao texto */
-    -webkit-text-fill-color: transparent; /* Torna a parte não preenchida transparente */
-    animation: gradiente-animado 4s ease infinite;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-  }
-  @keyframes gradiente-animado {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-  .footer-section ul li a:hover {
-    color: #ff9800;
-  }
-  
-  /* Ícones de Redes Sociais */
-  .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-  }
-  
-  .social-icons a img {
-    width: 30px;
-    height: 30px;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .social-icons a img:hover {
-    transform: scale(1.2);
-  }
-  
-  /* Rodapé Inferior */
-  .footer-bottom {
-    margin-top: 20px;
-    font-size: 0.8rem;
-    border-top: 1px solid #444;
-    padding: 10px;
-  }
-  
-/* Responsividade para telas menores */
-
-
-
-  
-
-
-/* Geral do footer ------------------------------------------------------------------------------*/
-/* Estilo Geral do Footer */
-footer {
-    background: linear-gradient(45deg, #5c5a07c7, #99947867,#5c5a07c7);
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-    margin-top: 30%;
     width: 100%;
-    margin-top: auto; /* Faz o footer "grudar" ao fim */
-   
+    font-size: 1.3em;
+}
+
+.creature-list li {
+    padding: 10px;
+    border-bottom: 1px solid #fdf91b;
+    cursor: pointer;
+}
+
+.creature-list li:hover {
+    background-color: #2f03619d;
+}
+
+.back-button {
+    padding: 10px 20px;
+    background-color: #ddd;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #bbb;
+}
+@media (max-width: 1080px) {
+    .menu-container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .menu-section {
+        width: 90%;
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    .search-container {
+        width: 90%;
+        padding: 10px;
+        margin-left: 3%;
+    }
+
+    .search-container input {
+        width: 100%;
+    }
+
+    .creature-list li {
+        padding: 8px;
+    }
+}
+
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fundo escuro com opacidade maior */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: hidden; /* Impede rolagem do fundo */
+}
+.modal img{
+   width: 50%;
+}
+
+
+.modal-content {
+    width: 70%; /* Reduz a largura para deixar mais elegante */
+    max-height: 85%; /* Ajusta altura máxima */
+    background: radial-gradient(circle, rgba(60, 0, 100, 0.7), rgba(30, 1, 60, 0.8), rgba(10, 0, 30, 0.9)); /* Gradiente mais sutil */
+    border-radius: 15px;
+    padding: 30px; /* Espaçamento interno maior */
+    border: 2px solid #fcec10; /* Mantém o contorno em amarelo */
+    overflow-y: auto; /* Adiciona scroll vertical */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7); /* Sombra mais forte para destacar */
+    position: relative;
+    color: #fffa8c; /* Cor do texto clara */
+    font-family: 'Arial', sans-serif; /* Fonte simples e legível */
+}
+
+.modal-content h2 {
+    text-align: center;
+    color: #fcec10; /* Destaque no título */
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 26px;
+    cursor: pointer;
+    color: #fcec10;
+    transition: color 0.3s;
+}
+
+.close-button:hover {
+    color: #ff6666; /* Cor de destaque ao passar o mouse */
+}
+
+.back-button {
+    display: block;
+    margin: 20px auto; /* Centraliza o botão */
+    padding: 12px 25px;
+    background-color: #fcec10; /* Amarelo vibrante */
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-align: center;
+}
+
+.back-button:hover {
+    background-color: #e00458; /* Rosa forte */
+    transform: scale(1.05); /* Efeito de leve zoom */
+}
+
+/* Geral do footer ------------------------------------------------------------------------------*/
+/* Estilo Geral do Footer */
+footer {
+    background: linear-gradient(45deg, #848b15e0,#705304d5);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 10%;
   }
   
   /* Conteúdo Principal */
@@ -1548,7 +1474,7 @@ footer {
   }
   
   .footer-section ul li a {
-    background: linear-gradient(45deg, #6d00fa, #fc104b, #8e8fff, #2dbdf7, #e05dfa);
+    background: linear-gradient(45deg, #493b15, #f4f80a, #fdfc9f, #f4f80a, #fdfc9f);
     background-size: 300%;
     background-clip: text; /* Faz o gradiente ser aplicado ao texto */
     -webkit-text-fill-color: transparent; /* Torna a parte não preenchida transparente */
@@ -1594,4 +1520,6 @@ footer {
 
 
 
-  
+
+
+

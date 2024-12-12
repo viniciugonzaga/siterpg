@@ -32,7 +32,7 @@
     </div>
     <!-- Botão Glow -->
     <div class="dado-container">
-        <img src="imagens/dado_calamita.webp" alt="dado" class="dado"> <!-- Substitua pelo nome da sua imagem -->
+        <img src="imagens/dado_noturno.webp" alt="dado" class="dado"> <!-- Substitua pelo nome da sua imagem -->
         <button id="openMenu" class="glow-on-hover">Jogar Dados</button>
     </div>
     
@@ -62,75 +62,122 @@
     
   </nav>
     <!-- Fim Nav-Bar ------------------------------------------------->
-     <!-- Menu para digitar a senha -->
-     <div id="senhaMenu" class="senha-container">
-        <label for="senha">Digite a senha:</label>
-        <input type="password" id="senha" placeholder="Senha">
-        <button onclick="verificarSenha()">Entrar</button>
-    </div>
-
-    <!-- Overlay para bloquear a interação com a página -->
-    <div id="overlay" class="overlay"></div>
-
-    <!-- Área de Conteúdo da Página -->
-    <div id="conteudo">
+    
+     
 
 
     <div class="titulo_principal">
         <h1 class="titulo_efeito">Criaturas</h1>
     </div>
 
+   
+
     <!--------------------------------cards----------------------------------------------------->
 
-    <div class="filter-buttons">
-        <button onclick="showFamilies('carnivores')">Carnívoros</button>
-        <button onclick="showFamilies('herbivores')">Herbívoros</button>
-        <button onclick="showFamilies('omnivores')">Onívoros</button>
+    <div class="menu-container">
+      <div class="menu-section" id="carnivores">
+          <h3>Carnívoros</h3>
+          <button onclick="openSearch('Carnívoros')">Abrir</button>
+      </div>
+      <div class="menu-section" id="herbivores">
+          <h3>Herbívoros</h3>
+          <button onclick="openSearch('Herbívoros')">Abrir</button>
+      </div>
+      <div class="menu-section" id="omnivores">
+          <h3>Onívoros</h3>
+          <button onclick="openSearch('Onívoros')">Abrir</button>
+      </div>
+      <div class="menu-section" id="apex">
+          <h3>Apex Criaturas</h3>
+          <button onclick="openSearch('Apex Criaturas')">Abrir</button>
+      </div>
+  </div>
+
+  <div class="search-container" id="searchContainer">
+      <h3 id="searchTitle">Pesquisar</h3>
+      <input type="text" id="searchInput" placeholder="Digite o nome da criatura..." oninput="filterCreatures()">
+    
+      <ul class="creature-list" id="creatureList">
+          <!-- Lista de criaturas será gerada dinamicamente -->
+      </ul>
+      <button class="back-button" onclick="closeSearch()">Voltar</button>
+  </div>
+
+  <div id="dinoModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" onclick="closeDinoModal()">&times;</span>
+        <h2 id="dinoName"></h2>
+        <p id="dinoTitle"></p>
+        <img id="dinoImage" src="" alt="Imagem do Dinossauro" />
+        <div class="dino-stats">
+            <p><strong>Peso:</strong> <span id="dinoWeight"></span></p>
+            <p><strong>Altura:</strong> <span id="dinoHeight"></span></p>
+            <p><strong>Comprimento:</strong> <span id="dinoLength"></span></p>
+            <p><strong>Atributos:</strong></p>
+            <ul>
+                <li>Agilidade: <span id="dinoAgi"></span></li>
+                <li>Força: <span id="dinoFor"></span></li>
+                <li>Inteligência: <span id="dinoInt"></span></li>
+                <li>Precisão: <span id="dinoPre"></span></li>
+                <li>Vigor: <span id="dinoVig"></span></li>
+            </ul>
+            <p><strong>Ataques:</strong></p>
+            <ul>
+             
+                <li id="dinoAtk1"></li>
+                <li id="dinoAtk2"></li>
+                <li id="dinoAtk3"></li>
+            </ul>
+            <p><strong>Habilidades:</strong></p>
+            <ul>
+                <li id="dinoHab1"></li>
+                <li id="dinoHab2"></li>
+            </ul>
+            <p><strong>Passiva:</strong> <span id="dinoPassiva"></span></p>
+            <p><strong>Passiva Elemental:</strong> <span id="dinoPassivaElemental"></span></p>
+        </div>
+
+        <!-- Botão de Voltar -->
+        <button class="back-button" onclick="closeDinoModal()">Voltar</button>
     </div>
+</div>
 
-    <!-- Botões de Família (escondidos inicialmente) -->
-    <div id="family-buttons" class="family-buttons" style="display: none;"></div>
+    
 
-    <!-- Lista de Dinossauros (escondida inicialmente) -->
-    <div id="creature-list" class="creature-list" style="display: none;"></div>
-
-    <!-- Card Detalhado -->
-    <div id="creature-card" class="creature-card-detail"></div>
-    
-    
-    <!--footer----------------------------------------------------------------------------->
-    <footer>
-      <div class="footer-content">
-          
-        <div class="footer-section about">
-          <h2>Sobre o RPG</h2>
-          <p>"Ir para o Ark é atravessar o limiar entre a vida e a morte, onde o descanso dá lugar à luta pela sobrevivência. Um transe inevitável, como um despertar em um mundo onde tudo é real e implacável. Lá, a existência é medida pela adaptação, e a morte é apenas uma pausa prolongada. Somente aqueles que superam o ciclo conseguem ascender e escapar."</p>
-        </div>
-        <div class="footer-section links">
-          <h2>Links Úteis</h2>
-          <ul>
-            <li><a href="index_mapas.html">Mapas</a></li>
-            <li><a href="#tribos">Tribos</a></li>
-            <li><a href="#regras">Regras</a></li>
-            <li><a href="#itens">Itens</a></li>
-          </ul>
-        </div>
-        <div class="footer-section social">
-          <h2>Conecte-se</h2>
-          <div class="social-icons">
-            <a href="https://instagram.com/vindinossauro" target="_blank"><img src="imagens/insta_home.png" alt="Instagram"></a>
-            <a href="https://github.com" target="_blank"><img src="imagens/git_home.png" alt="GitHub"></a>
-            <a href="mailto:vinigonzagap@gmail.com"><img src="imagens/gmail_home.png" alt="E-mail"></a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>RPG Ark: Criado por Vini &copy; 2024</p>
-      </div>
-    </footer>
-    
   
-  <!-- Inclui o arquivo de script -->
-  <script src="js/dinos.js"></script>
+        <!-- Footer ------------------------------------------------->
+        <footer>
+          <div class="footer-content">
+              
+            <div class="footer-section about">
+              <h2>Sobre o RPG</h2>
+              <p>"Ir para o Ark é atravessar o limiar entre a vida e a morte, onde o descanso dá lugar à luta pela sobrevivência. Um transe inevitável, como um despertar em um mundo onde tudo é real e implacável. Lá, a existência é medida pela adaptação, e a morte é apenas uma pausa prolongada. Somente aqueles que superam o ciclo conseguem ascender e escapar."</p>
+            </div>
+            <div class="footer-section links">
+              <h2>Links Úteis</h2>
+              <ul>
+                <li><a href="index_mapas.html">Mapas</a></li>
+                <li><a href="#tribos">Tribos</a></li>
+                <li><a href="#regras">Regras</a></li>
+                <li><a href="#itens">Itens</a></li>
+              </ul>
+            </div>
+            <div class="footer-section social">
+              <h2>Conecte-se</h2>
+              <div class="social-icons">
+                <a href="https://instagram.com/vindinossauro" target="_blank"><img src="imagens/insta_home.png" alt="Instagram"></a>
+                <a href="https://github.com" target="_blank"><img src="imagens/git_home.png" alt="GitHub"></a>
+                <a href="mailto:vinigonzagap@gmail.com"><img src="imagens/gmail_home.png" alt="E-mail"></a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>RPG Ark: Criado por Vini &copy; 2024</p>
+          </div>
+        </footer>
+        
+  
+   <!-- Inclui o arquivo de script -->
+   <script src="js/dinos.js"></script>
   </body>
   </html>

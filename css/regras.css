@@ -715,6 +715,7 @@ nav {
     margin-bottom: 5px;
     color: #fff5bb;
     text-shadow: 0 0 10px #e0b31c, 0 0 30px #cfcd3a;
+    text-align: center;
 }
 
 .topicos li:hover {

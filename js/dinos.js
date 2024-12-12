@@ -1,3 +1,6 @@
+
+
+
 // ========================
 // Menu (Navbar)
 // ========================
@@ -75,184 +78,95 @@ document.addEventListener("scroll", () => {
 
     // Se o usuário rolar até o fim da página
     if (window.scrollY + window.innerHeight >= document.body.scrollHeight) {
-        footer.style.background = "linear-gradient(45deg,#5c5a07c7, #99947867,#5c5a07c7)"; // Altera a cor do rodapé
+        footer.style.background = "linear-gradient(45deg, #0f0c29, #302b63, #24243e)"; // Altera a cor do rodapé
     } else {
         footer.style.background = "linear-gradient(45deg, #0f0c29, #302b63, #24243e)"; // Mantém a cor padrão
     }
 });
-const senhaCorreta = "."; // Defina a senha aqui
-const body = document.body;
-const senhaMenu = document.getElementById("senhaMenu");
-const overlay = document.getElementById("overlay");
+const correctPassword = ","; // Altere para a senha desejada
 
-// Bloqueia a rolagem da página
-body.classList.add("no-scroll");
+//dinos
 
-// Exibe o menu de senha
-senhaMenu.style.display = "block";
-
-// Função para verificar a senha
-function verificarSenha() {
-    const senhaDigitada = document.getElementById("senha").value;
-
-    if (senhaDigitada === senhaCorreta) {
-        // Se a senha estiver correta, remove o overlay e a rolagem da página
-        body.classList.remove("no-scroll");
-        overlay.style.display = "none";
-        senhaMenu.style.display = "none";
-    } else {
-        alert("Senha incorreta. Tente novamente.");
-    }
-}
-    //dinos----------------------------------------------------->
-
- // Estrutura de dados dos dinossauros
- const creatures = {
-    carnivores: {
-        Tyrannosauridae: [
-            {
-                name: 'Tyrannosaurus rex',
-                image: 'rex.jpg',
-                title: 'Rei dos dinossauros',
-                description: 'O famoso T-Rex, um dos maiores predadores da história.',
-                behavior: 'Agressivo',
-                size: { height: '4m', length: '12m' },
-                health: 1000,
-                weight: 7000,
-                armor: 20,
-                attributes: { agility: 30, strength: 50, intelligence: 20, precision: 40, vigor: 60 },
-                attacks: [
-                    { name: 'Mordida Mortal', damage: 250 },
-                    { name: 'Soco de Cauda', damage: 150 }
-                ],
-                abilities: ['Correr Rápido', 'Força Bruta']
-            },
-            {
-                name: 'Giganotosaurus',
-                image: 'giganotosaurus.jpg',
-                title: 'Gigante Caçador',
-                description: 'O Giganotosaurus era um predador massivo e muito agressivo.',
-                behavior: 'Agressivo',
-                size: { height: '4.5m', length: '13m' },
-                health: 1200,
-                weight: 8000,
-                armor: 15,
-                attributes: { agility: 25, strength: 60, intelligence: 15, precision: 35, vigor: 70 },
-                attacks: [
-                    { name: 'Boca Destrutiva', damage: 300 },
-                    { name: 'Investida', damage: 180 }
-                ],
-                abilities: ['Atacar em Grupo']
-            }
-        ]
-    },
-    herbivores: {
-        Sauropoda: [
-            {
-                name: 'Brachiosaurus',
-                image: 'brachiosaurus.jpg',
-                title: 'O Gigante Pacífico',
-                description: 'O Brachiosaurus era um dos maiores herbívoros que já existiram.',
-                behavior: 'Passivo',
-                size: { height: '12m', length: '25m' },
-                health: 1500,
-                weight: 25000,
-                armor: 10,
-                attributes: { agility: 10, strength: 40, intelligence: 25, precision: 15, vigor: 90 },
-                attacks: [{ name: 'Pisada Pesada', damage: 100 }],
-                abilities: ['Resistência Imensa']
-            }
-        ]
-    },
-    omnivores: {
-        Ornitholestes: [
-            {
-                name: 'Ornitholestes',
-                image: 'ornitholestes.jpg',
-                title: 'Caçador Ágil',
-                description: 'Onívoro ágil, capaz de atacar presas pequenas.',
-                behavior: 'Neutro',
-                size: { height: '2.5m', length: '5m' },
-                health: 800,
-                weight: 400,
-                armor: 5,
-                attributes: { agility: 50, strength: 30, intelligence: 40, precision: 35, vigor: 40 },
-                attacks: [
-                    { name: 'Garras Cortantes', damage: 120 },
-                    { name: 'Bico Afilado', damage: 80 }
-                ],
-                abilities: ['Velocidade']
-            }
-        ]
-    }
+const creatures = {
+    'Carnívoros': ['T-Rex', 'Velociraptor', 'Spinosaurus'],
+    'Herbívoros': ['Triceratops', 'Stegosaurus', 'Brachiosaurus'],
+    'Onívoros': ['Gallimimus', 'Oviraptor'],
+    'Apex Criaturas': ['Giganotosaurus', 'Indominus Rex']
 };
 
-// Função para exibir as famílias após escolher o tipo de alimentação
-function showFamilies(type) {
-    // Esconde os botões de tipo de alimentação
-    document.querySelector('.filter-buttons').style.display = 'none';
-    // Exibe as famílias
-    const familyButtons = document.getElementById('family-buttons');
-    familyButtons.innerHTML = ''; // Limpar os botões existentes
-    familyButtons.style.display = 'block';
+const dinoFichas = {
+    'T-Rex': {
+        title: 'Rei da Ilha',
+        image: 'imagens/dinos_T-rex_ficha.jpg', // Caminho válido
+        weight: '8 toneladas',
+        height: '6 metros',
+        length: '12 metros',
+        attributes: { agi: 3, for: 5, int: 2, pre: 2 , vig:4 },
+        attacks: ['Mordida Poderosa: 16d10+30', 'Investida: 7d10+10', 'Ataque de cauda: 7d10+20'],
+        abilities: ['Tirano: O tiranossauro rex é uma criatura implacável que consome todos, no começo da luta o tiranossauro aplica um grito de lentidão. Sua tirania é implacável, durante a luta quando está machucado o tiranossauro ganha +2d6 de acerto e deixa o inimigo fraco.', 'Coragem do rei: Não sofre efeito de medo'],
+        passiva: 'Domínio Territorial',
+        passivaElemental: 'Fúria Ígnea'
+    },
+    // Adicione outras fichas aqui
+};
 
-    // Adiciona os botões de família
-    const families = Object.keys(creatures[type]);
-    families.forEach(family => {
-        const button = document.createElement('button');
-        button.innerText = family;
-        button.onclick = () => showCreatures(type, family);
-        familyButtons.appendChild(button);
+function openSearch(category) {
+    document.getElementById('searchContainer').style.display = 'flex';
+    document.getElementById('searchTitle').textContent = `Pesquisar em ${category}`;
+
+    const creatureList = document.getElementById('creatureList');
+    creatureList.innerHTML = '';
+    creatures[category].forEach(creature => {
+        const li = document.createElement('li');
+        li.textContent = creature;
+        li.onclick = () => openDinoFicha(creature);
+        creatureList.appendChild(li);
     });
 }
 
-// Função para exibir os dinossauros da família
-function showCreatures(type, family) {
-    // Esconde os botões de família
-    document.getElementById('family-buttons').style.display = 'none';
-    // Exibe os dinossauros
-    const creatureList = document.getElementById('creature-list');
-    creatureList.innerHTML = ''; // Limpar lista de dinossauros
-    creatureList.style.display = 'flex';
+function openDinoFicha(dino) {
+    const ficha = dinoFichas[dino];
+    if (!ficha) {
+        alert('Ficha não encontrada');
+        return;
+    }
 
-    // Adiciona os botões de dinossauros
-    creatures[type][family].forEach(creature => {
-        const button = document.createElement('button');
-        button.classList.add('creature-button');
-        button.innerText = creature.name;
-        button.onclick = () => showCreatureDetail(creature);
-        creatureList.appendChild(button);
-    });
+    // Preencher dados no modal
+    document.getElementById('dinoName').textContent = dino;
+    document.getElementById('dinoTitle').textContent = ficha.title;
+    document.getElementById('dinoImage').src = ficha.image;
+    document.getElementById('dinoWeight').textContent = ficha.weight;
+    document.getElementById('dinoHeight').textContent = ficha.height;
+    document.getElementById('dinoLength').textContent = ficha.length;
+    document.getElementById('dinoAgi').textContent = ficha.attributes.agi;
+    document.getElementById('dinoFor').textContent = ficha.attributes.for;
+    document.getElementById('dinoInt').textContent = ficha.attributes.int;
+    document.getElementById('dinoPre').textContent = ficha.attributes.pre;
+    document.getElementById('dinoVig').textContent = ficha.attributes.vig;
+    document.getElementById('dinoAtk1').textContent = ficha.attacks[0];
+    document.getElementById('dinoAtk2').textContent = ficha.attacks[1];
+    document.getElementById('dinoAtk3').textContent = ficha.attacks[2];
+    document.getElementById('dinoHab1').textContent = ficha.abilities[0];
+    document.getElementById('dinoHab2').textContent = ficha.abilities[1];
+    document.getElementById('dinoPassiva').textContent = ficha.passiva;
+    document.getElementById('dinoPassivaElemental').textContent = ficha.passivaElemental;
+
+    // Exibir modal
+    document.getElementById('dinoModal').style.display = 'flex';
 }
 
-// Função para mostrar os detalhes de um dinossauro
-function showCreatureDetail(creature) {
-    const creatureCard = document.getElementById('creature-card');
-    creatureCard.style.display = 'block';
-    creatureCard.innerHTML = `
-        <img src="${creature.image}" alt="${creature.name}">
-        <h3>${creature.name} - ${creature.title}</h3>
-        <p><strong>Descrição:</strong> ${creature.description}</p>
-        <p><strong>Comportamento:</strong> ${creature.behavior}</p>
-        <p><strong>Tamanho:</strong> ${creature.size.height} de altura, ${creature.size.length} de comprimento</p>
-        <p><strong>Vida (PV):</strong> ${creature.health}</p>
-        <p><strong>Peso:</strong> ${creature.weight} kg</p>
-        <p><strong>Armadura:</strong> ${creature.armor}</p>
-        <h4>Atributos:</h4>
-        <ul>
-            <li><strong>Agi:</strong> ${creature.attributes.agility}</li>
-            <li><strong>For:</strong> ${creature.attributes.strength}</li>
-            <li><strong>Int:</strong> ${creature.attributes.intelligence}</li>
-            <li><strong>Pre:</strong> ${creature.attributes.precision}</li>
-            <li><strong>Vig:</strong> ${creature.attributes.vigor}</li>
-        </ul>
-        <h4>Ataques:</h4>
-        <ul>
-            ${creature.attacks.map(attack => `<li><strong>${attack.name}:</strong> ${attack.damage} dano</li>`).join('')}
-        </ul>
-        <h4>Habilidades:</h4>
-        <ul>
-            ${creature.abilities.map(ability => `<li>${ability}</li>`).join('')}
-        </ul>
-    `;
+function closeDinoModal() {
+    document.getElementById('dinoModal').style.display = 'none';
+}
+function filterCreatures() {
+    const query = document.getElementById('searchInput').value.toLowerCase(); // Pega o valor digitado e converte para minúsculas
+    const items = document.querySelectorAll('#creatureList li'); // Seleciona todos os itens da lista de criaturas
+
+    items.forEach(item => {
+        if (item.textContent.toLowerCase().includes(query)) {
+            item.style.display = 'list-item'; // Mostra o item se corresponder à busca
+        } else {
+            item.style.display = 'none'; // Esconde o item caso não corresponda
+        }
+    });
 }
