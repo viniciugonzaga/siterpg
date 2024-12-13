@@ -205,7 +205,7 @@ const dinoFichas = {
         height: '7 M',
         length: '13,5 M',
         attributes: { agi: 3, for: 5, int: 2, pre: 2, vig: 4 },
-        life: 360, // Vida do dinossauro
+        life: 420, // Vida do dinossauro
         armor: 25, // Armadura do dinossauro
         actionBonus: '+25 mordida, +20 intimidar, +20 cheirar, +20 pisar, +20 imobilizar, +15 cheirar, +10 cabeçada, +20 contra-ataque, +10 esquiva, +10 bloquear +5 corrida ', // Bônus de ação de criatura
         attacks: ['Mordida Poderosa: 16d10+30', 'Investida: 7d10+10', 'Ataque de cauda: 7d10+20'],
