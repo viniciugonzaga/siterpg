@@ -106,44 +106,78 @@
   <div id="dinoModal" class="modal">
     <div class="modal-content">
         <span class="close-button" onclick="closeDinoModal()">&times;</span>
-        <h2 id="dinoName"></h2>
-        <p id="dinoTitle"></p>
-        <img id="dinoImage" src="" alt="Imagem do Dinossauro" />
+        <h2 id="dinoName" class="dino-name"></h2>
+        <p id="dinoTitle" class="dino-title"></p>
+        <img id="dinoImage" src="" alt="Imagem do Dinossauro" class="dino-image" />
+
         <div class="dino-stats">
-            <p><strong>Peso:</strong> <span id="dinoWeight"></span></p>
-            <p><strong>Altura:</strong> <span id="dinoHeight"></span></p>
-            <p><strong>Comprimento:</strong> <span id="dinoLength"></span></p>
-            <p><strong>Atributos:</strong></p>
-            <ul>
-                <li>Agilidade: <span id="dinoAgi"></span></li>
-                <li>Força: <span id="dinoFor"></span></li>
-                <li>Inteligência: <span id="dinoInt"></span></li>
-                <li>Precisão: <span id="dinoPre"></span></li>
-                <li>Vigor: <span id="dinoVig"></span></li>
+            <!-- Peso, Altura e Comprimento -->
+            <div class="Status">
+                <p><strong>Peso:</strong> <span id="dinoWeight" class="dino-weight"></span></p>
+                <p><strong>Altura:</strong> <span id="dinoHeight" class="dino-height"></span></p>
+                <p><strong>Comprimento:</strong> <span id="dinoLength" class="dino-length"></span></p>
+            </div>
+
+            <!-- Atributos/Status -->
+            <div class="container-atributos">
+                <div class="Atri">
+                    <p><strong>Atributos/Status:</strong></p>
+                </div>
+                <div class="Status2">
+                    <ul class="dino-attributes">
+                        <li>Agilidade: <span id="dinoAgi" class="dino-agi"></span></li>
+                        <li>Força: <span id="dinoFor" class="dino-for"></span></li>
+                        <li>Inteligência: <span id="dinoInt" class="dino-int"></span></li>
+                        <li>Precisão: <span id="dinoPre" class="dino-pre"></span></li>
+                        <li>Vigor: <span id="dinoVig" class="dino-vig"></span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Pontos de Status (Vida e Armadura) -->
+            <div class="container-status">
+                <div class="Status">
+                  <p class="vida"><strong>Vida:</strong> <span id="dinoLife"></span></p>
+                  <p class="Armor"><strong>Armadura:</strong> <span id="dinoArmor"></span></p>
+                </div>
+            </div>
+
+            <!-- Bônus de Ação da Criatura -->
+            <div class="container-bonus">
+                <div class="Status">
+                  <p class="bonus"><strong>Bônus de Ação:</strong> <span id="dinoActionBonus"></span></p>
+                   
+                </div>
+            </div>
+
+            <!-- Ataques -->
+            <div class="ataques">
+                <p class="ataques2"><strong>Ataques:</strong></p>
+                <ul class="dino-attacks">
+                    <li id="dinoAtk1" class="dino-attack"></li>
+                    <li id="dinoAtk2" class="dino-attack"></li>
+                    <li id="dinoAtk3" class="dino-attack"></li>
+                </ul>
+            </div>
+
+            <!-- Habilidades -->
+            <p class="habi"><strong>Habilidades:</strong></p>
+            <ul class="dino-abilities">
+                <li id="dinoHab1" class="dino-ability"></li>
+                <li id="dinoHab2" class="dino-ability"></li>
             </ul>
-            <p><strong>Ataques:</strong></p>
-            <ul>
-             
-                <li id="dinoAtk1"></li>
-                <li id="dinoAtk2"></li>
-                <li id="dinoAtk3"></li>
-            </ul>
-            <p><strong>Habilidades:</strong></p>
-            <ul>
-                <li id="dinoHab1"></li>
-                <li id="dinoHab2"></li>
-            </ul>
-            <p><strong>Passiva:</strong> <span id="dinoPassiva"></span></p>
-            <p><strong>Passiva Elemental:</strong> <span id="dinoPassivaElemental"></span></p>
+
+            <!-- Passiva -->
+            <div class="caixa-passiva">
+                <p class="passi"><strong>Passiva:</strong> <span id="dinoPassiva" class="dino-passiva"></span></p>
+                <p class="passi2"><strong>Passiva Elemental:</strong> <span id="dinoPassivaElemental" class="dino-passiva-elemental"></span></p>
+            </div>
         </div>
 
         <!-- Botão de Voltar -->
         <button class="back-button" onclick="closeDinoModal()">Voltar</button>
     </div>
 </div>
-
-    
-
   
         <!-- Footer ------------------------------------------------->
         <footer>
