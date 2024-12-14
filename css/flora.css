@@ -714,7 +714,7 @@ transform: scale(1.05); /* Aumenta levemente ao passar o mouse */
     border: 2px solid #356f86; /* Borda colorida */
     background-color: #457a7a85; /* Cor de fundo da .container */
     margin-bottom: 5%;
-    margin-left: 10%;
+    margin: auto; /* Centraliza horizontalmente na página */
     border-radius: 10%;
     transition: transform 0.3s ease-in-out;
   }
@@ -746,8 +746,7 @@ transform: scale(1.05); /* Aumenta levemente ao passar o mouse */
   .text-box h2 {
     font-size: 1.8em;
     margin-bottom: 1px;
-  
-    margin-left: 30%;
+    text-align:center;
     background: linear-gradient(to bottom, #c4fce5,#b4dfe0c9); /* Gradiente horizontal */
     background-clip: text; /* Aplica o gradiente ao texto */
     -webkit-background-clip: text; /* Aplica o gradiente ao texto */
@@ -758,8 +757,10 @@ transform: scale(1.05); /* Aumenta levemente ao passar o mouse */
   .text-box p {
     font-size: 1.1em;
     color: #ace4f5; /* Cor do texto */
-    text-align: justify; /* Alinha o texto de maneira justificada */
+    text-align: center;
     padding: 10px;
+    background-color: #0c4af3;
+    border-radius: 10px;
   }
   @media (max-width: 1080px) {
     .container {
@@ -806,7 +807,7 @@ transform: scale(1.05); /* Aumenta levemente ao passar o mouse */
     border: 2px solid #c25b06c9; /* Borda colorida */
     background-color: #994c0485; /* Cor de fundo da .container */
     margin-bottom: 5%;
-    margin-left: 10%;
+    margin: auto; /* Centraliza horizontalmente na página */
     border-radius: 10%;
     transition: transform 0.3s ease-in-out;
   }
@@ -837,14 +838,17 @@ transform: scale(1.05); /* Aumenta levemente ao passar o mouse */
     font-size: 1.8em;
     margin-bottom: 1px;
     color: #fdfa48c4; /* Cor do título */
-    margin-left: 30%;
+   text-align: center;
   }
   
   .text-box2 p {
     font-size: 1.1em;
     color: #f1ee2d; /* Cor do texto */
-    text-align: justify; /* Alinha o texto de maneira justificada */
+    text-align: center;
     padding: 10px;
+    padding: 10px;
+    background-color: #880404;
+    border-radius: 10px;
   }
   @media (max-width: 1080px) {
     .container2 {
@@ -891,7 +895,7 @@ transform: scale(1.05); /* Aumenta levemente ao passar o mouse */
     border: 2px solid #976d37; /* Borda colorida */
     background-color: #776a4785; /* Cor de fundo da .container */
     margin-bottom: 5%;
-    margin-left: 10%;
+    margin: auto; /* Centraliza horizontalmente na página */
     border-radius: 10%;
     transition: transform 0.3s ease-in-out;
   }
@@ -924,7 +928,7 @@ transform: scale(1.05); /* Aumenta levemente ao passar o mouse */
     font-size: 1.8em;
     margin-bottom: 1px;
   
-    margin-left: 30%;
+    text-align: center;
     background: linear-gradient(to bottom, #f3d31b,#e9ad2dc9); /* Gradiente horizontal */
     background-clip: text; /* Aplica o gradiente ao texto */
     -webkit-background-clip: text; /* Aplica o gradiente ao texto */
@@ -935,8 +939,10 @@ transform: scale(1.05); /* Aumenta levemente ao passar o mouse */
   .text-box3 p {
     font-size: 1.1em;
     color: #eafd7c; /* Cor do texto */
-    text-align: justify; /* Alinha o texto de maneira justificada */
+    text-align: center;
     padding: 10px;
+    background-color: #8f3b03;
+    border-radius: 10px;
   }
   @media (max-width: 1080px) {
     .container3 {
@@ -982,7 +988,7 @@ transform: scale(1.05); /* Aumenta levemente ao passar o mouse */
     border: 2px solid #16dd41c9; /* Borda colorida */
     background-color: #18420d85; /* Cor de fundo da .container */
     margin-bottom: 5%;
-    margin-left: 10%;
+    margin: auto; /* Centraliza horizontalmente na página */
     border-radius: 10%;
     transition: transform 0.3s ease-in-out;
   }
@@ -1013,7 +1019,7 @@ transform: scale(1.05); /* Aumenta levemente ao passar o mouse */
     font-size: 1.8em;
     margin-bottom: 1px;
     color: #fdfa48c4; /* Cor do título */
-    margin-left: 30%;
+    text-align: center;
   }
   
   .text-box4 p {
@@ -1021,6 +1027,9 @@ transform: scale(1.05); /* Aumenta levemente ao passar o mouse */
     color: #95fa95; /* Cor do texto */
     text-align: justify; /* Alinha o texto de maneira justificada */
     padding: 10px;
+    background-color: #024105;
+    border-radius: 10px;
+    text-align: center;
   }
   @media (max-width: 1080px) {
     .container4{
@@ -1108,10 +1117,11 @@ margin-top: 15px;
 font-size: 1.4em;
 
 color: #b989f0;
-
+background-color: #200152;
+    border-radius: 10px;
 line-height: 1.6;
 text-align: center;
-border-radius: 10%;
+
 padding: 25px;
 
 }

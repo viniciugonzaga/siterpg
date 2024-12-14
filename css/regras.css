@@ -592,6 +592,7 @@ nav {
     border-radius: 10px;
     overflow: hidden;
     border: solid 2px #faa80e;
+    margin: auto; /* Centraliza horizontalmente na página */
   }
   
   /* Imagem de fundo apagada */
@@ -694,7 +695,7 @@ nav {
     border: solid 2px #faa80e;
     box-shadow: 0 4px 8px rgba(240, 206, 13, 0.856);
     border-radius: 5%;
-    margin-left: 7.5%;
+    margin: auto; /* Centraliza horizontalmente na página */
     margin-bottom: 5%;
 }
 
@@ -779,6 +780,7 @@ nav {
         margin-left: 0;
         width: 80%;
         margin: 5%;
+        margin: auto; /* Centraliza horizontalmente na página */
     }
 
     .topicos {

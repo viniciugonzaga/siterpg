@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: 'Lora', serif;
-    background: url('../imagens/lobby.jpeg') no-repeat center center fixed;
+    background: url('../imagens/lobby_bloqueado.jpg') no-repeat center center fixed;
     background-size: cover; /* Ajusta o fundo ao tamanho da tela */
     scroll-behavior: smooth;
     overflow-x: hidden; /* Impede o scroll horizontal */
@@ -328,7 +328,7 @@ nav {
 .glow-on-hover {
     padding: 0.5rem 1rem;
     font-size: 1rem; /* Tamanho de fonte relativo */
-    background-color: #fa3838; /* Vermelho vibrante */
+    background-color: #504a4a; /* Vermelho vibrante */
     color: white;
     border: none;
     border-radius: 5px;
@@ -366,13 +366,13 @@ nav {
     top: 1%; /* Define a distância do menu a partir do topo da tela */
     right: 1%; /* Define a distância do menu a partir da borda direita */
     width: 350px; /* Aumenta a largura do menu */
-    background-color: #fd4949a8; /* Cor de fundo */
-    border: 1px solid #fc0404; /* Borda */
+    background-color: #3e0896a1; /* Cor de fundo */
+    border: 1px solid #f9b8ff; /* Borda */
     border-radius: 5px; /* Bordas arredondadas */
     padding: 1.2rem; /* Espaçamento interno maior */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    box-shadow: 0 4px 8px rgba(10, 240, 171, 0.1); /* Sombra */
     z-index: 1000; /* Garante que o menu fique acima de outros elementos */
-    color: #fde796;
+    color: #fd23fd;
     transition: all 0.3s ease;
 }
 
@@ -399,7 +399,7 @@ nav {
 }
 
 #closeMenu:hover {
-    box-shadow: 0 0 15px rgba(253, 189, 11, 0.8); /* Efeito de brilho */
+    box-shadow: 0 0 15px rgba(59, 58, 52, 0.8); /* Efeito de brilho */
     transform: scale(1.1); /* Aumenta tamanho ao passar o mouse */
 }
 
@@ -434,7 +434,7 @@ nav {
     padding-right: 10px; /* Espaço extra para o scroll */
     border: 1px solid #ccc; /* Adiciona uma borda para destacar a área */
     border-radius: 5px;
-    background-color: #ffb936b9; /* Fundo levemente diferente para separar visualmente */
+    background-color: #3b372fb9; /* Fundo levemente diferente para separar visualmente */
 }
 
 #rollList {
@@ -446,7 +446,7 @@ nav {
 #rollList li {
     margin: 0.3rem 0;
     font-weight: bold;
-    color: #3d0404;
+    color: #04e688;
 }
 
 /* Campos de entrada */
@@ -523,8 +523,6 @@ nav {
 
 /* fim do nav-bar---------------------------------------------------------------------------- */
 
-/* Main*/
-
 /* Estilo geral do título */
 .titulo_principal {
     display: flex;
@@ -536,9 +534,15 @@ nav {
   .titulo_efeito {
     font-size: 4rem;
     font-weight: bold;
-    color: #fdd784;
     position: relative;
+    text-shadow:
+    0 0 5px #7e0fd8,   /* Primeira camada de brilho vermelho */
+    0 0 10px #a51eff,  /* Segunda camada laranja */
+    0 0 20px #ff00ea,  /* Terceira camada mais forte */
+    0 0 40px #bb47ff,  /* Camada de brilho maior */
+    0 0 80px #ea00ff;  /* Brilho externo */
 }
+
 
 .titulo_efeito:after {
     content: '';
@@ -547,12 +551,10 @@ nav {
     left: 50%;
     transform: translateX(-50%);
     height: 4px;
-    background: linear-gradient(90deg, #ebe716, #fca505, #ff7504, #fca505, #fcf805);
+    background: linear-gradient(90deg,  #0422aa, #6325f3, #9040eb,#6325f3,#0422aa);
     animation: wave 8s infinite;
+    
 }
-
-
-/* Animação da onda */
 @keyframes wave {
     0% { width: 50px; }
     20% { width: 100px; }
@@ -561,7 +563,6 @@ nav {
     80% { width: 100px; }
     100% { width: 50px; }
 }
-
 /* Responsividade */
 @media (max-width: 1120px) {
     .titulo_efeito {
@@ -581,266 +582,192 @@ nav {
     }
 }
 
-
-
-/* Estilo geral do carrossel */
-.carousel {
-    width: 100%;
-    max-width: 900px;
-    margin: 10px auto;
-    overflow: hidden; /* Esconde as imagens fora do contêiner */
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(231, 216, 4, 0.534); /* Sombra amarela */
-    position: relative;
-    margin-bottom: 20px;
-}
-
-/* Contêiner de imagens */
-.carousel-images {
-    display: flex;
-    transition: transform 1s ease-in-out; /* Suaviza a transição */
-    transform: translateX(-100%); /* Ajusta para começar na primeira imagem */
-}
-
-/* Estilo das imagens */
-.carousel-images img {
-    width: 100%; /* Cada imagem ocupa 100% da largura do contêiner */
-    flex-shrink: 0; /* Garante que cada imagem ocupe seu espaço */
-    border-radius: 10px;
-}
-
-/* Estilo geral do container */
-/* Container dos cards */
-.container-cards {
-    margin-top: 60px;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 colunas */
-    gap: 1px; /* Espaço entre os cards */
-    width: 100%;
-    padding: 0px;
-    justify-items: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    margin-bottom: 30px;
-}
-
-/* Estilo base dos cards */
-.card {
-    position: relative;
-    width: 225px; /* Tamanho base ajustado */
-    height: 350px; /* Tamanho base ajustado */
-    color: #ffffff;
-    transition: 0.5s;
+/* Estilo da div que contém os botões */
+.button-container {
+    display: flex; /* Alinha os botões horizontalmente */
+    justify-content: space-between; /* Espaço igual entre os botões */
+    align-items: center; /* Alinha verticalmente os botões */
+    width: 100%; /* Garantir que a largura ocupe toda a tela */
+    padding: 0 20px; /* Adiciona um pouco de espaço nas laterais */
+    box-sizing: border-box; /* Inclui o padding no cálculo da largura */
+  }
+  
+  /* Estilo dos botões */
+  .button {
+    background-color: #7d39eb; /* Cor de fundo */
+    color: white;
+    border: none;
+    padding: 20px 40px; /* Aumenta o padding para aumentar o tamanho do botão */
+    text-align: center;
+    text-decoration: none;
+    display: flex; /* Alinha o ícone e o texto horizontalmente */
+    align-items: center; /* Alinha o ícone e o texto verticalmente */
+    font-size: 20px; /* Aumenta o tamanho da fonte */
+    margin: 10px; /* Adiciona um espaço entre os botões */
+    border-radius: 8px;
     cursor: pointer;
-    overflow: hidden;
-    border-radius: 1.2em;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.card:hover {
-    transform: translateY(-20px);
-}
-
-.card::before {
-    content: '';
-    position: absolute;
+    transition: background-color 0.3s ease;
+    border: solid 3px #180463;
+    box-shadow: 0px 4px 8px rgba(158, 6, 189, 0.726), /* sombra padrão */
+                0px 6px 12px rgba(59, 77, 240, 0.795), /* segunda camada */
+                0px 8px 16px rgba(190, 7, 190, 0.678); /* sombra suave */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    flex: 1; /* Faz com que todos os botões ocupem o mesmo espaço */
+    max-width: 200px; /* Limita o tamanho máximo do botão */
+    text-align: center;
+  }
+  
+  /* Estilo para as imagens dentro dos botões (ícones) */
+  .button-icon {
+    margin-right: 12px; /* Aumenta o espaço entre o ícone e o texto */
+    width: 32px; /* Aumenta a largura dos ícones */
+    height: 32px; /* Aumenta a altura dos ícones */
+  }
+  
+  /* Efeito ao passar o mouse sobre o botão */
+  .button:hover {
+    background-color: #a80c62; /* Um tom mais escuro de verde */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 
+                0px 6px 12px rgba(240, 179, 252, 0.89), 
+                0px 8px 16px rgba(252, 177, 177, 0.932), 
+                0px 0px 15px rgba(209, 176, 253, 0.973), /* Sombra vermelha suave */
+                0px 0px 30px rgba(170, 170, 255, 0.856); /* Sombra azul mais intensa */
+  }
+  
+/* Estilo do Modal */
+.modal {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
-    z-index: 1;
-    border-radius: 1.2em;
-}
-
-.card span {
-    position: absolute;
-    top: 6px;
-    left: 6px;
-    right: 6px;
-    bottom: 6px;
-    background-size: 200% 200%;
-    animation: gradient-shift 3s linear infinite;
-    z-index: 2;
-    border-radius: 1em;
-    padding: 2px;
-}
-
-.card p {
-    font-size: 1.5rem; /* Tamanho de fonte ajustado */
-    font-weight: 800;
-    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.979); /* Fundo escuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Faz com que o modal sobreponha todo o conteúdo */
+  }
+  
+  /* Estilo do conteúdo do modal */
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
     text-align: center;
-    background: linear-gradient(45deg, #ecfc15, #a1f716, #f8e002,#a1f716, #fcf809);
-    background-size: 300%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradiente-animado 4s ease infinite;
-}
-
-.card .content {
-    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.849);
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  .modal-content h2 {
+    margin-bottom: 20px;
+  }
+  
+  .modal-content input {
+    width: 80%;
     padding: 10px;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.2em;
-}
-
-/* Gradiente animado */
-@keyframes gradiente-animado {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-
-
-@media (max-width: 1078px) {
-    .card {
-        width: 60px; /* Menor tamanho para dispositivos de médio porte */
-        height: 100px;
-    }
-    .card p {
-        font-size: 0.6rem; /* Tamanho de fonte ajustado */
-    }
-}
-
-
-
-
-/* Ajustando o layout para exibição responsiva em várias telas */
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 18px; /* Espaçamento entre os cards */
-}
-
-.card-1 {
-    background-image: url('../imagens/colossos_menu.webp');
-    box-shadow: 0 5px 15px rgba(72, 248, 28, 0.61);
-    
-}
-
-.card-2 {
-    background-image: url('../imagens/chefes_pangar.jpg');
-    box-shadow: 0 5px 15px rgba(10, 130, 243, 0.61);
-    
-}
-
-.card-3 {
-    background-image: url('../imagens/efeitos_menu.jpeg');
-    box-shadow: 0 5px 15px rgba(243, 10, 10, 0.61);
-    display: block; /* Garante que o link ocupe toda a área */
-    text-decoration: none;
-}
-
-
-
-.card-4 {
-    background-image: url('../imagens/personagens_menu.png');
-    box-shadow: 0 5px 15px rgba(247, 243, 19, 0.61);
-}
-
-.card-5 {
-    background-image: url('../imagens/flora_menu.jpg');
-    box-shadow: 0 5px 15px rgba(106, 252, 113, 0.61);
-}
-
-.card-6 {
-    background-image: url('../imagens/eventos_dodorex_home.webp');
-    box-shadow: 0 5px 15px rgba(179, 1, 250, 0.61);
-}
-
-.card-7 {
-    background-image: url('../imagens/tribo_home.png');
-    box-shadow: 0 5px 15px rgba(250, 142, 1, 0.61);
-}
-
-.card-8 {
-    background-image: url('../imagens/doenças_home.jpg');
-    box-shadow: 0 5px 15px rgb(255, 225, 227);
-}
-
-.card-9 {
-    background-image: url('../imagens/itens_home.webp');
-    box-shadow: 0 5px 15px rgb(16, 39, 243);
-}
-
-.card-10 {
-    background-image: url('../imagens/construções_home.jpg');
-    box-shadow: 0 5px 15px rgb(73, 54, 0);
-}
-
-.main-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-  /* Botão para gerar a região */
-.spawn-button {
-    background: linear-gradient(45deg, #3c0d92c0, #460c68b7,#3c0d92c0);
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .modal-content button {
+    background: #f7750b;
     color: white;
-    font-size: 1.2rem;
-    padding: 15px 25px;
     border: none;
-    border-radius: 25px;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
-   
-    transition: all 0.3s ease-in-out;
-    margin-top: 30px;
-
+    font-size: 1rem;
+  }
+  
+  .modal-content button:hover {
+    background: #e00707;
+  }
+/* Estilo da div que contém os botões */
+.button-container {
+    display: flex; /* Alinha os botões horizontalmente */
+    justify-content: space-between; /* Espaço igual entre os botões */
+    align-items: center; /* Alinha verticalmente os botões */
+    width: 100%; /* Garantir que a largura ocupe toda a tela */
+    padding: 0 20px; /* Adiciona um pouco de espaço nas laterais */
+    box-sizing: border-box; /* Inclui o padding no cálculo da largura */
 }
 
-.spawn-button:hover {
-    background-color: #a119f0d8;
-    box-shadow: 0 0 20px rgb(154, 11, 250);
+/* Estilo dos botões */
+.button {
+    background-color: #7d39eb; /* Cor de fundo */
+    color: white;
+    border: none;
+    padding: 20px 40px; /* Aumenta o padding para aumentar o tamanho do botão */
+    text-align: center;
+    text-decoration: none;
+    display: flex; /* Alinha o ícone e o texto horizontalmente */
+    align-items: center; /* Alinha o ícone e o texto verticalmente */
+    font-size: 20px; /* Aumenta o tamanho da fonte */
+    margin: 10px; /* Adiciona um espaço entre os botões */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: solid 3px #180463;
+    box-shadow: 0px 4px 8px rgba(158, 6, 189, 0.726), /* sombra padrão */
+                0px 6px 12px rgba(59, 77, 240, 0.795), /* segunda camada */
+                0px 8px 16px rgba(190, 7, 190, 0.678); /* sombra suave */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    flex: 1; /* Faz com que todos os botões ocupem o mesmo espaço */
+    max-width: 200px; /* Limita o tamanho máximo do botão */
+    text-align: center;
+}
+
+/* Estilo para as imagens dentro dos botões (ícones) */
+.button-icon {
+    margin-right: 12px; /* Aumenta o espaço entre o ícone e o texto */
+    width: 32px; /* Aumenta a largura dos ícones */
+    height: 32px; /* Aumenta a altura dos ícones */
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+.button:hover {
+    background-color: #a80c62; /* Um tom mais escuro de verde */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 
+                0px 6px 12px rgba(240, 179, 252, 0.89), 
+                0px 8px 16px rgba(252, 177, 177, 0.932), 
+                0px 0px 15px rgba(209, 176, 253, 0.973), /* Sombra vermelha suave */
+                0px 0px 30px rgba(170, 170, 255, 0.856); /* Sombra azul mais intensa */
+}
+
+/* Media query para telas com largura de 780px ou menor */
+@media (max-width: 1080px) {
+    .button-container {
+        flex-direction: column; /* Alinha os botões verticalmente */
+        align-items: center; /* Alinha os botões no centro */
+        padding: 0 10px; /* Reduz o padding nas laterais */
+    }
+
+    .button {
+        width: 30%; /* Faz os botões ocuparem toda a largura disponível */
+        max-width: none; /* Remove a limitação de largura */
+        padding: 15px 20px; /* Ajusta o padding para telas menores */
+        font-size: 18px; /* Reduz o tamanho da fonte para melhorar a legibilidade */
+        margin: 10px 0; /* Ajusta o espaço entre os botões */
+    }
+
+    .button-icon {
+        width: 28px; /* Reduz o tamanho dos ícones */
+        height: 28px; /* Reduz a altura dos ícones */
+        margin-right: 8px; /* Ajusta o espaço entre o ícone e o texto */
+    }
 }
   
-.botão_atalho{
-text-decoration: none;
-color: #fcf4ef;
-
-}
-@media (max-width: 1080px) {
-    /* Ajuste geral para o contêiner principal */
-    .main-container {
-        gap: 15px; /* Reduz o espaçamento entre os elementos */
-        padding: 10px; /* Adiciona margem interna */
-    }
-
-    /* Botão de gerar região responsivo */
-    .spawn-button {
-        font-size: 1rem; /* Reduz o tamanho da fonte */
-        padding: 10px 20px; /* Ajusta o espaçamento interno */
-        border-radius: 20px; /* Mantém as bordas arredondadas proporcionais */
-    }
-
-    /* Estilo do botão de atalho responsivo */
-    .botão_atalho {
-        font-size: 0.9rem; /* Reduz o tamanho do texto */
-        color: #eae1d8; /* Ajusta a cor para contraste melhor */
-    }
-}
-
-
-
-/* Main - final*/
-
 /* Geral do footer ------------------------------------------------------------------------------*/
 /* Estilo Geral do Footer */
 footer {
-    background: linear-gradient(45deg, #3f018fe0,#05219cd5);
+    background: linear-gradient(45deg, #694569e0,#391f69d5);
     color: #fff;
     padding: 20px 0;
     text-align: center;
+   margin-top: 5%;
   }
   
   /* Conteúdo Principal */

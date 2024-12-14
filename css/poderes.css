@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: 'Lora', serif;
-    background: url('../imagens/lobby.jpeg') no-repeat center center fixed;
+    background: url('../imagens/lobby_rituais.jpg') no-repeat center center fixed;
     background-size: cover; /* Ajusta o fundo ao tamanho da tela */
     scroll-behavior: smooth;
     overflow-x: hidden; /* Impede o scroll horizontal */
@@ -328,7 +328,7 @@ nav {
 .glow-on-hover {
     padding: 0.5rem 1rem;
     font-size: 1rem; /* Tamanho de fonte relativo */
-    background-color: #fa3838; /* Vermelho vibrante */
+    background-color: #fd631c; /* Vermelho vibrante */
     color: white;
     border: none;
     border-radius: 5px;
@@ -366,7 +366,7 @@ nav {
     top: 1%; /* Define a distância do menu a partir do topo da tela */
     right: 1%; /* Define a distância do menu a partir da borda direita */
     width: 350px; /* Aumenta a largura do menu */
-    background-color: #fd4949a8; /* Cor de fundo */
+    background-color: #a10606d8; /* Cor de fundo */
     border: 1px solid #fc0404; /* Borda */
     border-radius: 5px; /* Bordas arredondadas */
     padding: 1.2rem; /* Espaçamento interno maior */
@@ -536,8 +536,14 @@ nav {
   .titulo_efeito {
     font-size: 4rem;
     font-weight: bold;
-    color: #fdd784;
+    color: #ecf7fc;
     position: relative;
+    text-shadow:
+    0 0 5px #ff0000,   /* Primeira camada de brilho vermelho */
+    0 0 10px #ff4500,  /* Segunda camada laranja */
+    0 0 20px #ff4500,  /* Terceira camada mais forte */
+    0 0 40px #ff6347,  /* Camada de brilho maior */
+    0 0 80px #ff4500;  /* Brilho externo */
 }
 
 .titulo_efeito:after {
@@ -547,7 +553,7 @@ nav {
     left: 50%;
     transform: translateX(-50%);
     height: 4px;
-    background: linear-gradient(90deg, #ebe716, #fca505, #ff7504, #fca505, #fcf805);
+    background: linear-gradient(90deg, #f10d0d, #f08e1f, #fffacb, #f08e1f, #f10d0d);
     animation: wave 8s infinite;
 }
 
@@ -583,261 +589,159 @@ nav {
 
 
 
-/* Estilo geral do carrossel */
-.carousel {
-    width: 100%;
-    max-width: 900px;
-    margin: 10px auto;
-    overflow: hidden; /* Esconde as imagens fora do contêiner */
+
+
+/* Container Geral */
+#container-geral {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #ffef11;
+    padding: 20px;
+    background: radial-gradient(circle, rgba(252, 50, 14, 0.473), rgba(121, 3, 3, 0.582)); /* Gradiente radial */
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(231, 216, 4, 0.534); /* Sombra amarela */
-    position: relative;
+}
+
+#titulo{
+    font-size: 2.5rem;
+    color: #faf1de;
+    text-shadow:
+    0 0 5px #ff0000,   /* Primeira camada de brilho vermelho */
+    0 0 10px #ff4500,  /* Segunda camada laranja */
+    0 0 20px #ff4500,  /* Terceira camada mais forte */
+    0 0 40px #ff6347,  /* Camada de brilho maior */
+    0 0 80px #ff4500;  /* Brilho externo */
+}
+
+/* Ícones */
+#icones {
+    display: flex;
+    justify-content: space-evenly;
     margin-bottom: 20px;
 }
 
-/* Contêiner de imagens */
-.carousel-images {
+.icone {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #f4f817;
+    border-radius: 50%;
     display: flex;
-    transition: transform 1s ease-in-out; /* Suaviza a transição */
-    transform: translateX(-100%); /* Ajusta para começar na primeira imagem */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden; /* Garante que a imagem fique dentro do ícone */
+    transition: transform 0.3s ease;
+    background-color: #fdf916;
 }
 
-/* Estilo das imagens */
-.carousel-images img {
-    width: 100%; /* Cada imagem ocupa 100% da largura do contêiner */
-    flex-shrink: 0; /* Garante que cada imagem ocupe seu espaço */
+.icone img {
+    width: 100%; /* Garante que a imagem preencha o ícone */
+    height: 100%;
+    object-fit: cover; /* Ajusta a imagem sem distorção */
+}
+
+.icone:hover {
+    transform: scale(1.1);
+}
+
+/* Conteúdo */
+#conteudo {
+    padding: 20px;
+    border: 2px solid #ffd620;
+    border-radius: 10px;
+    background-color: #5a0707a1;
+    position: relative;
+}
+
+#conteudo img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
     border-radius: 10px;
 }
 
-/* Estilo geral do container */
-/* Container dos cards */
-.container-cards {
-    margin-top: 60px;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 colunas */
-    gap: 1px; /* Espaço entre os cards */
-    width: 100%;
-    padding: 0px;
-    justify-items: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    margin-bottom: 30px;
+#texto{
+font-size: 1.3em;
+padding: 4px;
+background-color: #3d0404;
+border-radius: 10px;
+border: solid 2px #fdfa21;
+
+    color: #ffe3a8;
+    text-shadow:
+    0 0 2px #ffdf2c   /* Primeira camada de brilho vermelho */
 }
-
-/* Estilo base dos cards */
-.card {
-    position: relative;
-    width: 225px; /* Tamanho base ajustado */
-    height: 350px; /* Tamanho base ajustado */
-    color: #ffffff;
-    transition: 0.5s;
-    cursor: pointer;
-    overflow: hidden;
-    border-radius: 1.2em;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.card:hover {
-    transform: translateY(-20px);
-}
-
-.card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
-    z-index: 1;
-    border-radius: 1.2em;
-}
-
-.card span {
-    position: absolute;
-    top: 6px;
-    left: 6px;
-    right: 6px;
-    bottom: 6px;
-    background-size: 200% 200%;
-    animation: gradient-shift 3s linear infinite;
-    z-index: 2;
-    border-radius: 1em;
-    padding: 2px;
-}
-
-.card p {
-    font-size: 1.5rem; /* Tamanho de fonte ajustado */
-    font-weight: 800;
-    text-transform: uppercase;
-    text-align: center;
-    background: linear-gradient(45deg, #ecfc15, #a1f716, #f8e002,#a1f716, #fcf809);
-    background-size: 300%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradiente-animado 4s ease infinite;
-}
-
-.card .content {
-    position: relative;
-    padding: 10px;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.2em;
-}
-
-/* Gradiente animado */
-@keyframes gradiente-animado {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-
-
-@media (max-width: 1078px) {
-    .card {
-        width: 60px; /* Menor tamanho para dispositivos de médio porte */
-        height: 100px;
-    }
-    .card p {
-        font-size: 0.6rem; /* Tamanho de fonte ajustado */
-    }
-}
-
-
-
-
-/* Ajustando o layout para exibição responsiva em várias telas */
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 18px; /* Espaçamento entre os cards */
-}
-
-.card-1 {
-    background-image: url('../imagens/colossos_menu.webp');
-    box-shadow: 0 5px 15px rgba(72, 248, 28, 0.61);
-    
-}
-
-.card-2 {
-    background-image: url('../imagens/chefes_pangar.jpg');
-    box-shadow: 0 5px 15px rgba(10, 130, 243, 0.61);
-    
-}
-
-.card-3 {
-    background-image: url('../imagens/efeitos_menu.jpeg');
-    box-shadow: 0 5px 15px rgba(243, 10, 10, 0.61);
-    display: block; /* Garante que o link ocupe toda a área */
-    text-decoration: none;
-}
-
-
-
-.card-4 {
-    background-image: url('../imagens/personagens_menu.png');
-    box-shadow: 0 5px 15px rgba(247, 243, 19, 0.61);
-}
-
-.card-5 {
-    background-image: url('../imagens/flora_menu.jpg');
-    box-shadow: 0 5px 15px rgba(106, 252, 113, 0.61);
-}
-
-.card-6 {
-    background-image: url('../imagens/eventos_dodorex_home.webp');
-    box-shadow: 0 5px 15px rgba(179, 1, 250, 0.61);
-}
-
-.card-7 {
-    background-image: url('../imagens/tribo_home.png');
-    box-shadow: 0 5px 15px rgba(250, 142, 1, 0.61);
-}
-
-.card-8 {
-    background-image: url('../imagens/doenças_home.jpg');
-    box-shadow: 0 5px 15px rgb(255, 225, 227);
-}
-
-.card-9 {
-    background-image: url('../imagens/itens_home.webp');
-    box-shadow: 0 5px 15px rgb(16, 39, 243);
-}
-
-.card-10 {
-    background-image: url('../imagens/construções_home.jpg');
-    box-shadow: 0 5px 15px rgb(73, 54, 0);
-}
-
-.main-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-  /* Botão para gerar a região */
-.spawn-button {
-    background: linear-gradient(45deg, #3c0d92c0, #460c68b7,#3c0d92c0);
-    color: white;
-    font-size: 1.2rem;
-    padding: 15px 25px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-   
-    transition: all 0.3s ease-in-out;
-    margin-top: 30px;
-
-}
-
-.spawn-button:hover {
-    background-color: #a119f0d8;
-    box-shadow: 0 0 20px rgb(154, 11, 250);
-}
-  
-.botão_atalho{
-text-decoration: none;
-color: #fcf4ef;
-
-}
+/* Responsivo para telas com largura de 720px ou menos */
 @media (max-width: 1080px) {
-    /* Ajuste geral para o contêiner principal */
-    .main-container {
-        gap: 15px; /* Reduz o espaçamento entre os elementos */
-        padding: 10px; /* Adiciona margem interna */
+    #container-geral {
+        width: 85%; /* Largura quase total em telas pequenas */
+        padding: 10px; /* Menos preenchimento */
     }
 
-    /* Botão de gerar região responsivo */
-    .spawn-button {
-        font-size: 1rem; /* Reduz o tamanho da fonte */
-        padding: 10px 20px; /* Ajusta o espaçamento interno */
-        border-radius: 20px; /* Mantém as bordas arredondadas proporcionais */
+    #titulo {
+        font-size: 1.8rem; /* Reduz o tamanho do título */
     }
 
-    /* Estilo do botão de atalho responsivo */
-    .botão_atalho {
-        font-size: 0.9rem; /* Reduz o tamanho do texto */
-        color: #eae1d8; /* Ajusta a cor para contraste melhor */
+    #icones {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas pequenas */
+        gap: 15px; /* Mais espaçamento entre os ícones */
+    }
+
+    .icone {
+        width: 45px; /* Ícones ainda menores */
+        height: 45px;
+    }
+
+    #conteudo {
+        padding: 10px; /* Menos preenchimento no conteúdo */
+    }
+
+    #texto {
+        font-size: 1em; /* Ajuste do tamanho do texto */
     }
 }
 
 
+@keyframes gradiente-animado {
+0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
+}
 
-/* Main - final*/
+@media (max-width: 1080px) {
+.container-aether {
+  margin-top: 10%;
+  
+    width: 80%;
+    
+  padding: 15px; /* Reduz o espaçamento interno */
+  border-radius: 8%; /* Bordas levemente menos arredondadas */
+  margin-bottom: 6%; /* Adiciona mais espaçamento inferior */
+}
+
+.img-box5 {
+  height: 250px; /* Reduz a altura da imagem */
+  border-radius: 8%; /* Ajusta as bordas arredondadas */
+}
+
+.title5 {
+  font-size: 1.5em; /* Reduz o tamanho do título */
+  margin-top: 15px; /* Diminui o espaçamento superior */
+}
+
+.text5 {
+  font-size: 0.7em; /* Reduz o tamanho do texto */
+  line-height: 1.5; /* Ajusta o espaçamento entre linhas */
+  padding: 10px; /* Reduz o padding */
+  border-radius: 8%; /* Ajusta as bordas arredondadas */
+}
+}
+
 
 /* Geral do footer ------------------------------------------------------------------------------*/
 /* Estilo Geral do Footer */
 footer {
-    background: linear-gradient(45deg, #3f018fe0,#05219cd5);
+    background: linear-gradient(45deg, #b80f0fe0,#ff782ab0, #b80f0fe0);
     color: #fff;
     padding: 20px 0;
     text-align: center;

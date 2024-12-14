@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="css/home.css">
+    <title>Rituais</title>
+    <link rel="stylesheet" href="css/poderes.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <!-- Fonte -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,111 +62,62 @@
     
   </nav>
     <!-- Fim Nav-Bar ------------------------------------------------->
-    <main>
-        <!-- Seção Início -->
-        <div class="titulo_principal">
-            <h1 class="titulo_efeito">Home</h1>
-        </div>
-        
-          
-        <!-- carrossel-->
-        <div class="carousel">
-            <div class="carousel-images">
-                <!-- Imagem duplicada da última para efeito de transição -->
-                <img src="imagens/t-rex_primal.jpg" alt="Imagem 8 (duplicada)">
-                <!-- Imagens reais -->
-                <img src="imagens/espino_praia.jpg" alt="Imagem 1">
-                <img src="imagens/shastassauros.jpg" alt="Imagem 2">
-                <img src="imagens/Shadow-of-the-Colossus-titâ-home.jpg" alt="Imagem 3">
-                <img src="imagens/pyromanes_ macho_fêmea.jpeg" alt="Imagem 4">
-                <img src="imagens/the_isle_raptor.webp" alt="Imagem 5">
-                <img src="imagens/deinosuchus_praia.png" alt="Imagem 6">
-                <img src="imagens/meraxes_aberration_the_isle.jpg" alt="Imagem 7">
-                <img src="imagens/t-rex_primal.jpg" alt="Imagem 8">
-                <!-- Imagem duplicada da primeira para efeito de transição -->
-                <img src="imagens/espino_praia.jpg" alt="Imagem 1 (duplicada)">
-            </div>
-        </div>
-    
-       
 
-<!--cards-->
-<div class="container-cards" >
-    <div class="card card-1">
-        <span></span>
-        <div class="content">
-            <p>Colossos</p>
-        </div>
-    </div>
-    <div class="card card-2">
-        <span></span>
-        <div class="content">
-            <p>Chefes</p>
-        </div>
-    </div>
-    <a href="index_poderes.html" class="card card-3">
-        <span></span>
-        <div class="content">
-            <p>Rituais</p>
-        </div>
-    </a>
-
-    <div class="card card-4" onclick="goToPage('index_personagens.html')">
-    <span></span>
-    <div class="content">
-        <p>Bonecos</p>
-    </div>
+ <!-- Seção Início -->
+ <div class="titulo_principal">
+    <h1 class="titulo_efeito">Rituais</h1>
 </div>
 
-    <div  class="card card-5" onclick="goToPage('index_flora.html')">
-        <span></span>
-        <div class="content">
-            <p>Flora</p>
+
+
+<div id="container-geral">
+    <!-- Ícones -->
+    <div id="icones">
+        <div class="icone" onclick="mudarConteudo(1)">
+            <img src="imagens/poderes_crescer.png" alt="Ícone 1">
+        </div>
+        <div class="icone" onclick="mudarConteudo(2)">
+            <img src="imagens/poderes_ira.jpg" alt="Ícone 2">
+        </div>
+        <div class="icone" onclick="mudarConteudo(3)">
+            <img src="imagens/poderes_espelho_de_carne.jpg" alt="Ícone 3">
+        </div>
+        <div class="icone" onclick="mudarConteudo(4)">
+            <img src="imagens/poderes_traumas.jpg" alt="Ícone 4">
+        </div>
+        <div class="icone" onclick="mudarConteudo(5)">
+            <img src="imagens/poderes_caminho.jpg" alt="Ícone 5">
+        </div>
+    </div>
+
+    <!-- Conteúdo -->
+    <div id="conteudo">
+        <img id="imagem-conteudo" src="imagens/poderes_menu_centro.png" alt="Imagem do Conteúdo">
+        <h1 id="titulo">Rituais-gerais</h1>
+        <p id="texto">Os Caídos (civilização) descobriram como controlar o arcano ou Aether em criaturas e itens, alterando seu comportamento, atributos ou aparência física. Para replicar suas ações, eles utilizam padrões ou sequências de sigilos e símbolos em pedras que regulam o fluxo de sintonia.</p>
+    </div>
+    <div id="icones">
+        <div class="icone" onclick="mudarConteudo(6)">
+            <img src="imagens/poderes_reflexão.jpg" alt="Ícone 1">
+        </div>
+        <div class="icone" onclick="mudarConteudo(7)">
+            <img src="imagens/poderes_chama.jpg" alt="Ícone 2">
+        </div>
+        <div class="icone" onclick="mudarConteudo(8)">
+            <img src="imagens/poderes_morte.jpg" alt="Ícone 3">
+        </div>
+        <div class="icone" onclick="mudarConteudo(9)">
+            <img src="imagens/poderes_arma.webp" alt="Ícone 4">
+        </div>
+        <div class="icone" onclick="mudarConteudo(10)">
+            <img src="imagens/poderes_bicho.jpg" alt="Ícone 5">
         </div>
     </div>
 </div>
 
-<div class="container-cards">
-    <div class="card card-6">
-        <span></span>
-        <div class="content">
-            <p>Eventos</p>
-        </div>
-    </div>
-    <div class="card card-7">
-        <span></span>
-        <div class="content">
-            <p>Tribo</p>
-        </div>
-    </div>
-    <div class="card card-8">
-        <span></span>
-        <div class="content">
-            <p>Efeitos</p>
-        </div>
-    </div>
-    <div class="card card-9">
-        <span></span>
-        <div class="content">
-            <p>Itens</p>
-        </div>
-    </div>
-    <div class="card card-10">
-        <span></span>
-        <div class="content">
-            <p>construções</p>
-        </div>
-    </div>
-</div>
 
-<div class="main-container">
-    <!-- Botão para abrir o menu de mapas -->
-    <button id="btnSpawn" class="spawn-button" ><a class="botão_atalho" href="index_jogadores.html" >Criar personagem</a></button>
-  <div>
-
-</main>
-    <!--footer----------------------------------------------------------------------------->
-    <footer>
+       <!--footer----------------------------------------------------------------------------->
+       <footer>
         <div class="footer-content">
             
           <div class="footer-section about">
@@ -198,6 +149,6 @@
       
 
  <!-- Inclui o arquivo de script -->
- <script src="js/script home.js"></script>
+ <script src="js/poderes.js"></script>
 </body>
 </html>
