@@ -706,6 +706,7 @@ nav {
     width: 200px;
     border: solid 2px #faa80e;
     border-radius: 5%;
+    text-align: center;
 }
 
 .topicos li {
