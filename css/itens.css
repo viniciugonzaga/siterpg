@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: 'Lora', serif;
-    background: url('../imagens/ciencia_lobby.webp') no-repeat center center fixed;
+    background: url('../imagens/lobby_itensEconstruções.jpg') no-repeat center center fixed;
     background-size: cover; /* Ajusta o fundo ao tamanho da tela */
     scroll-behavior: smooth;
     overflow-x: hidden; /* Impede o scroll horizontal */
@@ -328,7 +328,7 @@ nav {
 .glow-on-hover {
     padding: 0.5rem 1rem;
     font-size: 1rem; /* Tamanho de fonte relativo */
-    background-color: #05568be7; /* Vermelho vibrante */
+    background-color: #504a4a; /* Vermelho vibrante */
     color: white;
     border: none;
     border-radius: 5px;
@@ -366,13 +366,13 @@ nav {
     top: 1%; /* Define a distância do menu a partir do topo da tela */
     right: 1%; /* Define a distância do menu a partir da borda direita */
     width: 350px; /* Aumenta a largura do menu */
-    background-color: #022b85e1; /* Cor de fundo */
-    border: 1px solid #2cf3d2; /* Borda */
+    background-color: #023774c4; /* Cor de fundo */
+    border: 1px solid #21cde4; /* Borda */
     border-radius: 5px; /* Bordas arredondadas */
     padding: 1.2rem; /* Espaçamento interno maior */
-    box-shadow: 0 4px 8px rgba(67, 243, 23, 0.1); /* Sombra */
+    box-shadow: 0 4px 8px rgba(10, 240, 171, 0.1); /* Sombra */
     z-index: 1000; /* Garante que o menu fique acima de outros elementos */
-    color: #9ddefc;
+    color: #15fcfc;
     transition: all 0.3s ease;
 }
 
@@ -399,7 +399,7 @@ nav {
 }
 
 #closeMenu:hover {
-    box-shadow: 0 0 15px rgba(253, 189, 11, 0.8); /* Efeito de brilho */
+    box-shadow: 0 0 15px rgba(59, 58, 52, 0.8); /* Efeito de brilho */
     transform: scale(1.1); /* Aumenta tamanho ao passar o mouse */
 }
 
@@ -434,7 +434,7 @@ nav {
     padding-right: 10px; /* Espaço extra para o scroll */
     border: 1px solid #ccc; /* Adiciona uma borda para destacar a área */
     border-radius: 5px;
-    background-color: #ffb936b9; /* Fundo levemente diferente para separar visualmente */
+    background-color: #3b372fb9; /* Fundo levemente diferente para separar visualmente */
 }
 
 #rollList {
@@ -446,7 +446,7 @@ nav {
 #rollList li {
     margin: 0.3rem 0;
     font-weight: bold;
-    color: #3d0404;
+    color: #04e688;
 }
 
 /* Campos de entrada */
@@ -522,27 +522,27 @@ nav {
 
 
 /* fim do nav-bar---------------------------------------------------------------------------- */
+
 /* Estilo geral do título */
 .titulo_principal {
     display: flex;
     justify-content: center;
     align-items: center;
    margin-top: 120px;
-   
   }
   
   .titulo_efeito {
     font-size: 4rem;
     font-weight: bold;
-    
     position: relative;
-    max-width:319px;
-    color: #a3f9fc;
     text-shadow:
-    0 0 10px #57fd65,
-    0 0 20px #7dfa64,
-    0 0 30px #8ffda7;
+    0 0 5px #2cfff4,   /* Primeira camada de brilho vermelho */
+    0 0 10px #1e53ff,  /* Segunda camada laranja */
+    0 0 20px #0099ff,  /* Terceira camada mais forte */
+    0 0 40px #6347ff,  /* Camada de brilho maior */
+    0 0 80px #00eeff;  /* Brilho externo */
 }
+
 
 .titulo_efeito:after {
     content: '';
@@ -551,10 +551,10 @@ nav {
     left: 50%;
     transform: translateX(-50%);
     height: 4px;
-    background: linear-gradient(90deg, #1fff8f,#24f3fa, #1fff8f);
+    background: linear-gradient(90deg,  #0422aa, #25b9f3, #40ebe3,#25b9f3,#0422aa);
     animation: wave 8s infinite;
+    
 }
-
 @keyframes wave {
     0% { width: 50px; }
     20% { width: 100px; }
@@ -566,11 +566,11 @@ nav {
 /* Responsividade */
 @media (max-width: 1120px) {
     .titulo_efeito {
-        font-size: 2.2rem; /* Diminui o tamanho da fonte em telas médias */
+        font-size: 2.3rem; /* Diminui o tamanho da fonte em telas médias */
     }
 
     .titulo_efeito:after {
-        width: 300px; /* Reduz a largura da linha de efeito para telas menores */
+        width: 350px; /* Reduz a largura da linha de efeito para telas menores */
     }
     @keyframes wave {
         0% { width: 50px; }
@@ -582,347 +582,189 @@ nav {
     }
 }
 
-/* Container principal */
-.carrossel-container {
-    width: 60%;
-    box-shadow: 0px 4px 8px rgb(1, 68, 155); /* Sombra para destaque */
-    background: radial-gradient(circle, rgba(1, 56, 4, 0.925),rgba(1, 56, 4, 0.925),rgba(1, 56, 4, 0.925), rgb(23, 94, 2), rgb(75, 104, 83)); /* Gradiente radial */
-    border-radius: 20px;
-    border: solid, 2px #1fff8f;
-    padding: 25px;
-    text-align: center;
+.container {
+    display: flex;
     margin: auto;
-    transition: transform 0.3s ease-in-out;
+    text-align: center;
     margin-bottom: 5%;
+    max-width: 1200px; /* Limitar largura para um design mais centrado */
+    flex-wrap: wrap; /* Permitir que o layout seja mais responsivo */
 }
 
-.carrossel-container:hover {
-    transform: scale(1.02); /* Leve zoom ao passar o mouse */
-}
-
-/* Carrossel */
-.carrossel {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    
-    position: relative;
-    gap: 15px; /* Espaçamento entre os botões e a imagem */
-}
-
-.carrossel img {
-    width: 70%;
-    border-radius: 15px;
-    box-shadow: 0px 4px 8px rgb(6, 221, 157); /* Sombra para destaque */
-    transition: transform 0.3s ease, opacity 0.5s ease-in-out;
-}
-
-.carrossel img:hover {
-    transform: scale(1.05); /* Leve zoom na imagem ao passar o mouse */
-}
-
-/* Botões de navegação */
-.nav-button {
-    background: linear-gradient(145deg, #17ff9e, #067235,#17ff9e); /* Gradiente nos botões */
-    color: #fff;
-    border: none;
-    font-size: 28px;
-    font-weight: bold;
-    padding: 15px 20px;
-    cursor: pointer;
-    border-radius: 50%;
-    box-shadow: 0px 4px 8px rgb(6, 221, 157); /* Sombra para destaque */
-    transition: transform 0.2s ease, background-color 0.3s ease;
-}
-
-.nav-button:hover {
-    background: #07318b; /* Cor mais escura ao passar o mouse */
-    transform: scale(1.1); /* Leve aumento ao passar o mouse */
-}
-
-.nav-button:active {
-    transform: scale(0.95); /* Botão "afunda" ao clicar */
-}
-
-/* Texto descritivo */
-.texto-descricao {
-    font-size: 20px;
-    font-weight: bold;
-    color: #e1ffea;
-    background: linear-gradient(145deg, #2a4930,#2a4930, #3a6442, #2a4930, #2a4930, #2a4930,#3a6442,#2a4930,#2a4930); /* Gradiente suave no fundo */
-    border: 2px solid #f5e029;
-    border-radius: 15px;
-    padding: 15px;
-    margin-top: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra no texto */
-    line-height: 1.6;
-    transition: transform 0.3s ease;
-    text-shadow:
-    0 0 10px #57fd65,
-    0 0 20px #7dfa64,
-    0 0 30px #f8e322;
-}
-
-.texto-descricao:hover {
-    transform: scale(1.02); /* Leve zoom ao passar o mouse no texto */
-}
-
-/* Ajuste responsivo */
-@media (max-width: 1080px) {
-    .carrossel-container {
-        width: 90%;
-        padding: 20px;
-    }
-
-    .carrossel img {
-        width: 70%;
-    }
-
-    .nav-button {
-        font-size: 24px;
-        padding: 10px 15px;
-    }
-
-    .texto-descricao {
-        font-size: 18px;
-        padding: 10px;
-    }
-}
-
-/* Container principal */
-.conteudo-principal {
-    width: 70%;
-    background: radial-gradient(circle, #2a4930, #265830, #15461f, #015a13); /* Gradiente suave no fundo */
-    border: 2px solid #f5e029;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(2, 13, 168, 0.918);
+.coluna-esquerda, .coluna-central {
+    flex: 1;
     padding: 20px;
+    margin: 10px;
     text-align: center;
-    margin: auto;
+    background-color: #270350; /* Cor de fundo padrão */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgb(250, 246, 246);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: solid, 2px #01f1e5;
 }
 
-/* Estilo dos ícones */
-.area-icones {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-    
+.coluna-direita {
+    flex: 2;
+    padding: 20px;
+    background-color: #270350; /* Cor de fundo padrão */
+    background-image: url('../imagens/itens_menu_armas.webp');
+    background-size: contain; /* Ajusta a imagem para caber dentro da coluna */
+    background-position: center center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Garante que a coluna ocupe todo o espaço disponível */
+    overflow: hidden; /* Impede que a imagem saia da área visível da coluna */
+    border: solid, 2px #01f1e5;
 }
 
-.icone-box {
-    width: 80px;
-    height: 80px;
-    background-color: #5c05ce;
-    border: 3px solid #1d03b1;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.coluna-direita h2 {
+    font-size: 24px;
+    color: #19e4ff; /* Cor mais suave para o título */
     font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.coluna-direita p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ffffff; /* Texto mais legível sobre o fundo */
+}
+.coluna-esquerda:hover, .coluna-central:hover, .coluna-direita:hover {
+    transform: translateY(-5px); /* Efeito de elevação */
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
+}
+
+.efeito {
+    cursor: pointer;
+    background-color: #0674a7; /* Cor de fundo suave */
+    border: 2px solid #17fcdd;
+    border-radius: 8px;
+    padding: 12px 20px;
+    margin: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff8e2;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.efeito:hover {
+    background-color: #040797;
     color: #ffffff;
     cursor: pointer;
-    transition: transform 0.3s, background-color 0.3s;
-    background-size: cover; /* Garante que a imagem de fundo cubra completamente */
-    background-position: center; /* Centraliza a imagem */
+    transform: translateY(-3px); /* Efeito sutil de elevação */
 }
 
-/* Efeito de hover nos ícones */
-.icone-box:hover {
-    background-color: #4682b4;
-    transform: scale(1.1);
+.efeito:active {
+    transform: translateY(2px); /* Efeito de clique */
 }
 
-/* Estilo do modal */
-.area-modal {
-    background-color: #f9f9f9;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    margin: auto;
+.coluna-direita h2 {
+    font-size: 1.6rem;
+    color: #68ffe6;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-shadow:
+    0 0 10px #1bfcf1,
+    0 0 20px #26ebe1,
+    0 0 30px #57fff7;
 }
 
-/* Texto do modal */
-.conteudo-modal {
+.coluna-direita p {
     font-size: 1.2rem;
-    font-weight: bold;
-    color: #ffe927;
-    background-color: rgba(2, 1, 44, 0.37); /* Para destacar o texto */
-    padding: 10px;
-    border-radius: 8px;
-    text-align: center;
-    margin: auto;
+    line-height: 1.6;
+    color: #fffff8;
+    text-shadow:
+    0 0 10px #1bfcf1,
+    0 0 20px #26ebe1,
+    0 0 30px #57fff7;
 }
-
-/* Fundo do modal com imagens */
-.area-modal[data-fundo="1"] { 
-    background-image: url('../imagens/ciencia_hibridos_menu.jpg'); /* Substitua pelo caminho da imagem */
-    
-}
-
-.area-modal[data-fundo="2"] { 
-    background-image: url('../imagens/ciencias_nucelar_fundo.webp'); /* Substitua pelo caminho da imagem */
-}
-
-.area-modal[data-fundo="3"] { 
-    background-image: url('../imagens/ciencias_antigo_fundo.jpg'); /* Substitua pelo caminho da imagem */
-}
-
-.area-modal[data-fundo="4"] { 
-    background-image: url('../imagens/ciencia_misterio_menu.jpg'); /* Substitua pelo caminho da imagem */
-}
-
-.area-modal[data-fundo="5"] { 
-    background-image: url('../imagens/ciencias_criação_fundo.jpg'); /* Substitua pelo caminho da imagem */
-}
-
-/* Imagem nos ícones */
-.icone-box[data-icone="1"] {
-    background-image: url('../imagens/ciencias_icon_dinos.jpg'); /* Substitua pelo caminho da imagem do ícone */
-}
-
-.icone-box[data-icone="2"] {
-    background-image: url('../imagens/ciencia_nuclear_icon.webp'); /* Substitua pelo caminho da imagem do ícone */
-}
-
-.icone-box[data-icone="3"] {
-    background-image: url('../imagens/ciencias_antigos_icon.jpg'); /* Substitua pelo caminho da imagem do ícone */
-}
-
-.icone-box[data-icone="4"] {
-    background-image: url('../imagens/ciencias_misterio_icon.png'); /* Substitua pelo caminho da imagem do ícone */
-}
-
-.icone-box[data-icone="5"] {
-    background-image: url('../imagens/ciencias_criação_icon.webp'); /* Substitua pelo caminho da imagem do ícone */
-}
-
-.modal-hibridos {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(28, 1, 78, 0.589);
-    justify-content: center;
-    align-items: center;
-    overflow-y: auto;
-}
-
-.modal-hibridos-content {
-    background-color: #270361;
-    padding: 20px;
-    border-radius: 10px;
-    width: 500px;
-    max-height: 60%; /* Limite da altura */
-    overflow-y: auto;
-    color: #e4fc11d2;
-}
-
-.animal-box, #dnaFortificacao {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ad01d8;
-    border-radius: 5px;
-    background-color: #041a7a;
-}
-
-label {
-    display: block;
-    margin: 5px 0;
-}
-
-input, select {
-    width: 100%;
-    padding: 5px;
-    margin-bottom: 10px;
-}
-
-button {
-    background-color: #4809db;
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-    border-radius: 5px;
-    
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-#resultadoDTHibridos {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #24015c;
-    color: #e8f80a;
-    border-radius: 5px;
-    font-weight: bold;
-}
-.botoes{
-text-align: center;
-    margin: auto;
-    margin-bottom: 5%;
-}
-/* Responsividade para telas menores que 780px */
 @media (max-width: 1080px) {
-    .conteudo-principal {
-        width: 90%;
-        padding: 15px;
-        padding: 0.9rem;
+    .container {
+        flex-direction: column; /* Empilha as colunas */
     }
 
-    .icone-box {
-        width: 50px;
-        height: 50px;
+    .coluna-esquerda, .coluna-central, .coluna-direita {
+        flex: 1 1 auto; /* Permite que cada coluna ocupe todo o espaço disponível */
+        margin: 10px 0;
     }
 
-    .area-icones {
-        gap: 10px;
+    .coluna-direita {
+        background-size: cover; /* Ajusta a imagem para cobrir toda a área */
+        height: auto; /* Permite que a altura se ajuste automaticamente */
     }
 
-    .modal-hibridos-content {
-        width: 70%;
-        max-width: 70%; /* Maximiza o modal na tela */
-        max-height: 40%;
-        padding: 15px;
+    .coluna-direita h2 {
+        font-size: 1.4rem;
     }
 
-    label {
+    .coluna-direita p {
+        font-size: 1rem;
+        text-shadow: none; /* Remove a sombra do texto para melhor legibilidade */
+    }
+
+    .efeito {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+}
+/* Estilo geral do carrossel */
+.carousel {
+    width: 70%;
+   
+    margin: 10px auto;
+    overflow: hidden; /* Esconde as imagens fora do contêiner */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(24, 241, 248, 0.795); /* Sombra amarela */
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Contêiner de imagens */
+.carousel-images {
+    display: flex;
+    transition: transform 1s ease-in-out; /* Suaviza a transição */
+    transform: translateX(-100%); /* Ajusta para começar na primeira imagem */
+}
+
+/* Estilo das imagens */
+.carousel-images img {
+    width: 100%; /* Cada imagem ocupa 100% da largura do contêiner */
+    flex-shrink: 0; /* Garante que cada imagem ocupe seu espaço */
+    border-radius: 10px;
+}
+
+.texto1{
+    width: 70%;
+    color: #fbff20;
+    font-size: 1.4rem;
+text-align: center;
+margin: auto;
+background-color: #01024e;
+padding: 10px;
+border-radius: 10px;
+border:solid, 2px #07cfc5
+
+
+}
+@media (max-width: 1080px) {
+    .texto1 {
         font-size: 0.9rem;
-    }
-
-    input, select, button {
-        font-size: 0.85rem;
-        padding: 8px;
-    }
-
-    #resultadoDTHibridos {
-        font-size: 0.9rem;
-        padding: 8px;
-    }
-    .conteudo-modal {
-        font-size: 0.8rem;
-        
-    }
+    
+}
 }
 
 /* Geral do footer ------------------------------------------------------------------------------*/
 /* Estilo Geral do Footer */
 footer {
-    background: linear-gradient(45deg,#29fd8193,#12dbff80,#29fd8186);
+    background: linear-gradient(45deg, #353757ea,#0b5592d5,#353757ea);
     color: #fff;
     padding: 20px 0;
     text-align: center;
-    
+   margin-top: 5%;
   }
   
   /* Conteúdo Principal */

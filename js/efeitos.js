@@ -82,30 +82,30 @@ document.addEventListener("scroll", () => {
 });
 const efeitos = document.querySelectorAll('.efeito');
 const descricao = document.getElementById('descricao');
-const imagem = document.querySelector('img');
+
 
 // Array de objetos com os dados de cada efeito
 const dadosEfeitos = [
-    { nome: 'Efeito 1', descricao: ' Além de não enxergar, o personagem pode desenvolver alucinações auditivas ou táteis.', imagem: 'imagem1.jpg' },
-    { nome: 'Efeito 2', descricao: ' Se fazer ações vomita e recebe torpor, corre metade do deslocamento', imagem: 'imagem2.jpg' },
-    { nome: 'Efeito 3', descricao: '1d6 aleatório pra oq deve fazer. 1-atacar 2-recuar 3-nada 4-cura- 5-grita 6-escolhe ', imagem: 'imagem1.jpg' },
-    { nome: 'Efeito 4', descricao: 'Vê mais de uma coisa aleatória e imagens da cabeça, imagina criaturas, recebe danos mentais enganosos', imagem: 'imagem2.jpg' },
-    { nome: 'Efeito 5', descricao: 'Toda vez que vê aquilo toma dano mental até superar ou esquecer.', imagem: 'imagem1.jpg' },
-    { nome: 'Efeito 6', descricao: 'Não consegue se mover de medo, perde a ação.', imagem: 'imagem2.jpg' },
+    { nome: 'Efeito 1', descricao: ' Além de não enxergar, o personagem pode desenvolver alucinações auditivas ou táteis.' },
+    { nome: 'Efeito 2', descricao: ' Se fazer ações vomita e recebe torpor, corre metade do deslocamento' },
+    { nome: 'Efeito 3', descricao: '1d6 aleatório pra oq deve fazer. 1-atacar 2-recuar 3-nada 4-cura- 5-grita 6-escolhe ' },
+    { nome: 'Efeito 4', descricao: 'Vê mais de uma coisa aleatória e imagens da cabeça, imagina criaturas, recebe danos mentais enganosos' },
+    { nome: 'Efeito 5', descricao: 'Toda vez que vê aquilo toma dano mental até superar ou esquecer.'},
+    { nome: 'Efeito 6', descricao: 'Não consegue se mover de medo, perde a ação.' },
     { nome: 'Efeito 7', descricao: 'Além de não ouvir, o personagem pode ter dificuldade em qualquer teste de audição ou perceber q está fazendo barulho.' },
-    { nome: 'Efeito 8', descricao: 'Além de não poder falar, o personagem pode ter dificuldade em expressar suas emoções. ', imagem: 'imagem2.jpg' },
-    { nome: 'Efeito 9', descricao: 'Permita que os personagens façam testes de resistência para diminuir a duração ou a severidade de um efeito.', imagem: 'imagem1.jpg' },
+    { nome: 'Efeito 8', descricao: 'Além de não poder falar, o personagem pode ter dificuldade em expressar suas emoções. '},
+    { nome: 'Efeito 9', descricao: 'Permita que os personagens façam testes de resistência para diminuir a duração ou a severidade de um efeito.' },
     { nome: 'Efeito 10', descricao: 'Ofereça diferentes formas de curar os efeitos, como poções, magias ou descanso prolongado.' },
-    { nome: 'Efeito 11', descricao: ' 10% da vida máxima é perdida por rodada e faz rastro', imagem: 'imagem1.jpg' },
-    { nome: 'Efeito 12', descricao: 'Normalmente conserta com cirurgia mas recebe 20% de dano total da vida por rodada até estabilizarem. ', imagem: 'imagem2.jpg' },
+    { nome: 'Efeito 11', descricao: ' 10% da vida máxima é perdida por rodada e faz rastro' },
+    { nome: 'Efeito 12', descricao: 'Normalmente conserta com cirurgia mas recebe 20% de dano total da vida por rodada até estabilizarem. '},
     { nome: 'Efeito 13', descricao: 'Fica com sono ou é nocauteado, teste de resistência' },
-    { nome: 'Efeito 14', descricao: 'Sofre desvantagem no teste de lua, esquiva ou bloqueio. -5/-10/-15.', imagem: 'imagem2.jpg' },
-    { nome: 'Efeito 15', descricao: 'Não faz nada e perde a ação.', imagem: 'imagem1.jpg' },
+    { nome: 'Efeito 14', descricao: 'Sofre desvantagem no teste de lua, esquiva ou bloqueio. -5/-10/-15.'},
+    { nome: 'Efeito 15', descricao: 'Não faz nada e perde a ação.' },
     { nome: 'Efeito 16', descricao: 'Ao andar toma dano interno 10 % da vida.' },
-    { nome: 'Efeito 17', descricao: ' Metade do deslocamento +5 furtividade em situações.', imagem: 'imagem1.jpg' },
-    { nome: 'Efeito 18', descricao: 'Muito medo de começar a luta -5 em qualquer ação no começo da luta.', imagem: 'imagem2.jpg' },
+    { nome: 'Efeito 17', descricao: ' Metade do deslocamento +5 furtividade em situações.'},
+    { nome: 'Efeito 18', descricao: 'Muito medo de começar a luta -5 em qualquer ação no começo da luta.'},
     { nome: 'Efeito 19', descricao: ' Perde 1 dado em todos os testes de força.' },
-    { nome: 'Efeito 20', descricao: 'Menos 1 dado em todos os testes de agilidade.', imagem: 'imagem2.jpg' },
+    { nome: 'Efeito 20', descricao: 'Menos 1 dado em todos os testes de agilidade.' }
    
 
 ];

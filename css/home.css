@@ -733,12 +733,16 @@ nav {
 .card-1 {
     background-image: url('../imagens/colossos_menu.webp');
     box-shadow: 0 5px 15px rgba(72, 248, 28, 0.61);
+    display: block; /* Garante que o link ocupe toda a área */
+    text-decoration: none;
     
 }
 
 .card-2 {
     background-image: url('../imagens/chefes_pangar.jpg');
     box-shadow: 0 5px 15px rgba(10, 130, 243, 0.61);
+    display: block; /* Garante que o link ocupe toda a área */
+    text-decoration: none;
     
 }
 
@@ -754,6 +758,9 @@ nav {
 .card-4 {
     background-image: url('../imagens/personagens_menu.png');
     box-shadow: 0 5px 15px rgba(247, 243, 19, 0.61);
+    display: block; /* Garante que o link ocupe toda a área */
+    text-decoration: none;
+
 }
 
 .card-5 {
@@ -782,6 +789,7 @@ nav {
 .card-9 {
     background-image: url('../imagens/itens_home.webp');
     box-shadow: 0 5px 15px rgb(16, 39, 243);
+    
 }
 
 .card-10 {
