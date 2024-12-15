@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ciências</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="css/ciências.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <!-- Fonte -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,7 @@
     </div>
     <!-- Botão Glow -->
     <div class="dado-container">
-        <img src="imagens/dado_elemental.webp" alt="dado" class="dado"> <!-- Substitua pelo nome da sua imagem -->
+        <img src="imagens/dado_planta.webp" alt="dado" class="dado"> <!-- Substitua pelo nome da sua imagem -->
         <button id="openMenu" class="glow-on-hover">Jogar Dados</button>
     </div>
     
@@ -62,7 +62,133 @@
     
   </nav>
     <!-- Fim Nav-Bar ------------------------------------------------->
-    
+    <div class="titulo_principal">
+      <h1 class="titulo_efeito">Ciência</h1>
+  </div>
+
+  <div class="carrossel-container">
+    <div class="carrossel">
+        <!-- Botão Esquerdo -->
+        <button id="prev" class="nav-button">&#8592;</button>
+        
+        <!-- Imagens -->
+        <img id="imagem" src="" alt="Imagem 1">
+        
+        <!-- Botão Direito -->
+        <button id="next" class="nav-button">&#8594;</button>
+    </div>
+
+    <!-- Texto Descritivo -->
+    <div class="texto-descricao">
+        <p id="texto">Bem vidno a área da ciências</p>
+    </div>
+</div>
+
+<div class="conteudo-principal">
+  <div class="area-icones">
+      <div class="icone-box" data-icone="1" onclick="mudarModal(1)"></div>
+      <div class="icone-box" data-icone="2" onclick="mudarModal(2)"></div>
+      <div class="icone-box" data-icone="3" onclick="mudarModal(3)"></div>
+      <div class="icone-box" data-icone="4" onclick="mudarModal(4)"></div>
+      <div class="icone-box" data-icone="5" onclick="mudarModal(5)"></div>
+  </div>
+
+  <div class="area-modal" id="modal" data-fundo="1">
+      <div class="conteudo-modal">
+         
+      </div>
+  </div>
+</div>
+
+<div class="botoes">
+  <!-- Botão que abre o modal -->
+<button id="abrirModalHibridos">Criar Híbrido</button>
+</div>
+
+
+<!-- Estrutura do Modal -->
+<div id="modalHibridos" class="modal-hibridos">
+    <div class="modal-hibridos-content">
+        <span id="fecharModalHibridos" class="fechar-hibridos">&times;</span>
+        <h2>Sistema de Criação de Híbridos</h2>
+
+        <!-- Formulário de entrada -->
+        <div id="formularioHibridos">
+            <div class="animal-box" id="animal1">
+                <label for="bicho1">Nome do Primeiro Pai:</label>
+                <input type="text" id="bicho1" placeholder="Ex: T-Rex">
+
+                <label for="compatibilidade1">Compatibilidade:</label>
+                <select id="compatibilidade1">
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                </select>
+
+                <label for="duplicar1">Duplicar DNA?</label>
+                <input type="checkbox" id="duplicar1">
+
+                <label for="dominante1">Este é o DNA dominante?</label>
+                <input type="radio" name="dominante" value="animal1">
+            </div>
+
+            <div class="animal-box" id="animal2">
+                <label for="bicho2">Nome do Segundo Pai:</label>
+                <input type="text" id="bicho2" placeholder="Ex: Dilo">
+
+                <label for="compatibilidade2">Compatibilidade:</label>
+                <select id="compatibilidade2">
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                </select>
+
+                <label for="duplicar2">Duplicar DNA?</label>
+                <input type="checkbox" id="duplicar2">
+
+                <label for="dominante2">Este é o DNA dominante?</label>
+                <input type="radio" name="dominante" value="animal2">
+            </div>
+        </div>
+
+        <!-- Botão para adicionar mais animais -->
+        <button id="adicionarAnimal">Adicionar Outro Animal</button>
+
+        <!-- Seção de DNA de Fortificação -->
+        <div id="dnaFortificacao">
+            <h3>DNA de Fortificação</h3>
+            <label for="fortificacaoNome">Nome do DNA de Fortificação:</label>
+            <input type="text" id="fortificacaoNome" placeholder="Ex: Rajassauro">
+
+            <label for="fortificacaoChance">Porcentagem de Fortificação:</label>
+            <select id="fortificacaoChance">
+                <option value="50">50%</option>
+                <option value="100">100%</option>
+            </select>
+
+            <label for="fortificacaoDominante">O DNA de Fortificação é Dominante?</label>
+            <select id="fortificacaoDominante">
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+            </select>
+        </div>
+
+        <!-- Botão para calcular DT -->
+        <button id="calcularDTHibridos">Calcular DT</button>
+
+        <!-- Resultado -->
+        <div id="resultadoDTHibridos"></div>
+         <!-- Nome do híbrido -->
+         <label for="nomeHibrido">Nome do Híbrido:</label>
+         <input type="text" id="nomeHibrido" placeholder="Digite o nome do híbrido" />
+     
+         <!-- Exibição dos animais envolvidos -->
+         <p><strong>Junção:</strong> <span id="nomeJunção"></span></p>
+     
+         <!-- Exibição das habilidades e suas porcentagens -->
+         <h4>Habilidades e Chances:</h4>
+         <div id="habilidadesHibrido"></div>
+    </div>
+</div>
+  
       <!--footer----------------------------------------------------------------------------->
       <footer>
         <div class="footer-content">
@@ -96,6 +222,6 @@
       
 
  <!-- Inclui o arquivo de script -->
- <script src=""></script>
+ <script src="js/ciencias.js"></script>
 </body>
 </html>
